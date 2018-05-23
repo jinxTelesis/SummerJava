@@ -20,7 +20,7 @@ public class Main {
 				+ "cos(x)*cos(x) - 1 should be 0.");
 		
 		System.out.println(Math.random());
-		
+		System.out.println("test1");
 		System.out.print("The value of Math.PI is");
 		
 		endTime = System.currentTimeMillis();
