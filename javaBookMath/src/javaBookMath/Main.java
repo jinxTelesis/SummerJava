@@ -7,6 +7,20 @@ public class Main {
 		long endTime;
 		double time;
 		
+		String advice;
+		advice = "Seize the day!";
+		String badAdvice;
+		badAdvice = "Play it safe";
+		
+		System.out.println(advice.equals(badAdvice));
+		System.out.println(advice.equalsIgnoreCase(badAdvice));
+		System.out.println(advice.length());
+		System.out.println(advice.charAt(1));
+		System.out.println(advice.indexOf(badAdvice));
+		advice.toUpperCase();
+		advice.toLowerCase();
+		advice.trim();
+		
 		startTime = System.currentTimeMillis();
 		
 		double width, height, hypotenuse;
