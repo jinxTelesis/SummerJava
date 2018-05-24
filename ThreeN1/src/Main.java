@@ -3,6 +3,13 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		int[] numbers;
+		numbers = new int[3];
+		numbers[0] = 42;
+		numbers[1] = 17;
+		numbers[2] = 256;
+		printValuesInList(numbers);
+		
 		int N;
 		int counter;
 		
@@ -34,7 +41,7 @@ public class Main {
 		
 	}
 	
-	static void pinrtValuesInList(int [] list)
+	static void printValuesInList(int [] list)
 	{
 		System.out.print('[');
 		int i;
