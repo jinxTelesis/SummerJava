@@ -29,6 +29,22 @@ public class Main {
 		System.out.print("There were ");
 		System.out.print(counter);
 		System.out.print(" terms in the sequence.");
+		
+		
+		
+	}
+	
+	static void pinrtValuesInList(int [] list)
+	{
+		System.out.print('[');
+		int i;
+		for (i = 0; i < list.length; i++)
+		{
+			if (i > 0)
+				System.out.print(',');
+			System.out.print(list[i]);
+		}
+		System.out.println((']'));
 	}
 
 }
