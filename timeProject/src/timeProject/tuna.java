@@ -3,7 +3,10 @@ package timeProject;
 public enum tuna {
 	bucky("nice", "22"),
 	kelsey("cutie", "10"),
-	julia("bigmistake", "12");
+	julia("bigmistake", "12"),
+	nicole("italian", "13"),
+	candy("different", "14"),
+	erin("iwish", "16");
 	
 	private final String desc;
 	private final String year;
