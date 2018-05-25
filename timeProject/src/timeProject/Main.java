@@ -8,7 +8,7 @@ public class Main {
 		
 		SecObject.setTime(10, 50, 10);
 		
-		System.out.println(SecObject.toString());
+		
 		
 
 	}
