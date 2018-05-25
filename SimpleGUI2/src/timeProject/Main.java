@@ -9,8 +9,9 @@ public class Main {
 		
 		tuna Dre = new tuna();
 		Dre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Dre.setSize(275,180);
+		Dre.setSize(350,200);
 		Dre.setVisible(true);
+		
 	}
 	
 }
