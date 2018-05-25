@@ -3,7 +3,7 @@ package timeProject;
 public class Food {
 	
 	public void eat() {
-		System.out.println("I am the eat methods");
+		System.out.println("this food is great");
 	}
 
 }
