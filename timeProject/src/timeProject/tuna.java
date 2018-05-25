@@ -1,17 +1,22 @@
 package timeProject;
 
 public class tuna {
-	private String first;
-	private String last;
-	private static int members = 0;
+	private int sum;
+	private final int NUMBER;
 	
-	public tuna(String fn, String ln) {
-		first = fn;
-		last = ln;
-		members++;
-		System.out.printf("constructor for %s %s, "
-				+ "mebers in the club: %d\n", first, last,members);
+	public tuna(int x)
+	{
+		NUMBER = x;
 	}
 	
+	public void add()
+	{
+		sum+=NUMBER;
+	}
+	
+	public String toString()
+	{
+		return String.format("sum = %d\n", sum);
+	}
 	
 }
