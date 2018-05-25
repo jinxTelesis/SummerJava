@@ -4,18 +4,11 @@ import java.util.EnumSet;
 public class Main {
 
 	public static void main(String[] args) {
-		tuna tunaObject = new tuna(10);
+		tuna tunaObject = new tuna();
+		potpie potObject = new potpie();
 		
-		
-		
-		for (int i =0; i < 5;i++)
-		{
-			tunaObject.add();
-			System.out.printf("%s", tunaObject); // has a toString so it works
-		}
+		tunaObject.eat();
+		potObject.eat();
 	}
 	
-	
-
-
 }
