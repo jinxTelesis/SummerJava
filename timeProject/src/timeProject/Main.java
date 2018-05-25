@@ -7,10 +7,14 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		tuna Dre = new tuna();
-		Dre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Dre.setSize(275,180);
-		Dre.setVisible(true);
+		fatty bucky = new fatty();
+		Food fo = new Food();
+		potpie pie = new potpie();
+		tuna tunababy = new tuna();
+		
+		bucky.digest(pie);
+		bucky.digest(tunababy);
+		bucky.digest(pie);
+		
 	}
-	
 }

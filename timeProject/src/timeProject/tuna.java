@@ -10,29 +10,11 @@ import javax.swing.JPasswordField;
 import javax.swing.JOptionPane;
 
 
-public class tuna extends JFrame {
+public class tuna extends Food {
 	
-	private JTextField item1;
-	private JTextField item2;
-	private JTextField item3;
-	private JPasswordField passwordField;
-	
-	public tuna() {
-		super("The title");
-		setLayout(new FlowLayout());
-		
-		item1 = new JTextField(10);
-		add(item1);
-		
-		item2 = new JTextField("enter text here");
-		add(item2);
-		
-		item3 = new JTextField("uneditable", 20);
-		item3.setEditable(false);
-		add(item3);
-		
-		passwordField = new JPasswordField("mypass");
-		add(passwordField);
-		
+	public void eat() {
+		System.out.println("I am the tuna tuner methods");
 	}
+		
+	
 }
