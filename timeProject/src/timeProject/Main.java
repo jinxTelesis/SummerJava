@@ -6,6 +6,9 @@ public class Main {
 		SecondClass SecObject = new SecondClass();
 		System.out.println(SecObject.toMilitary());
 		
+		SecObject.setTime(10, 50, 10);
+		
+		System.out.println(SecObject.toString());
 		
 
 	}
