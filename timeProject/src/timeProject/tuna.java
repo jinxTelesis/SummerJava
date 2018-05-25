@@ -1,66 +1,17 @@
 package timeProject;
 
 public class tuna {
-	private int hour;
-	private int minute;
-	private int second;
+	private String name;
+	private potpie birthday; // reference to potpie object
 	
-	public tuna() {
-		this(0,0,0);
-	}
-	
-	public tuna(int h)
+	public tuna(String theName, potpie theDate)
 	{
-		this(h,0,0);
+		name = theName;
+		birthday = theDate;
 	}
-	
-	public tuna(int h, int m)
-	{
-		this(h,m,0);
-	}
-	
-	public tuna(int h, int m, int s) {
-		setTime(h,m,s);
-	}
-	
-	public void setTime(int h, int m , int s)
-	{
-		setHour(h);
-		setMinute(m);
-		setSecond(s);
-	}
-	
-	public void setHour(int h)
-	{
-		this.hour = ((h>=0 && h<24)? h:0);
-	}
-	
-	public void setMinute(int m)
-	{
-		this.minute = ((m>=0 && m<60)? m:0);
-	}
-	
-	public void setSecond(int s)
-	{
-		this.minute = ((s>=0 && s<60)? s:0);
-	}
-	
-	public int getHour() {
-		return this.hour;
-	}
-	
-	public int getMinute() {
-		return this.minute;
-	}
-	
-	public int getSecond() {
-		return this.second;
-	}
-	
-	public String toMilitary()
-	{
-		return String.format("%02d:%02d:%02d", getHour(),getMinute(),getSecond());
-	}
-	
 
+	public String toString() {
+		return String.format("My name is %s, my birthday is %s", name, birthday);
+		
+	}
 }
