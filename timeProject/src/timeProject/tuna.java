@@ -1,30 +1,16 @@
 package timeProject;
 
-public enum tuna {
-	bucky("nice", "22"),
-	kelsey("cutie", "10"),
-	julia("bigmistake", "12"),
-	nicole("italian", "13"),
-	candy("different", "14"),
-	erin("iwish", "16");
+public class tuna {
+	private String first;
+	private String last;
+	private static int members = 0;
 	
-	private final String desc;
-	private final String year;
-	
-	tuna(String description, String birthday)
-	{
-		desc = description;
-		year = birthday;
-	}
-	
-	public String getDesc()
-	{
-		return desc;
-	}
-	
-	public String getYear()
-	{
-		return year;
+	public tuna(String fn, String ln) {
+		first = fn;
+		last = ln;
+		members++;
+		System.out.printf("constructor for %s %s, "
+				+ "mebers in the club: %d\n", first, last,members);
 	}
 	
 	
