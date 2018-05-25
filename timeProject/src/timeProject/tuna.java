@@ -1,17 +1,28 @@
 package timeProject;
 
-public class tuna {
-	private String name;
-	private potpie birthday; // reference to potpie object
+public enum tuna {
+	bucky("nice", "22"),
+	kelsey("cutie", "10"),
+	julia("bigmistake", "12");
 	
-	public tuna(String theName, potpie theDate)
+	private final String desc;
+	private final String year;
+	
+	tuna(String description, String birthday)
 	{
-		name = theName;
-		birthday = theDate;
+		desc = description;
+		year = birthday;
 	}
-
-	public String toString() {
-		return String.format("My name is %s, my birthday is %s", name, birthday);
-		
+	
+	public String getDesc()
+	{
+		return desc;
 	}
+	
+	public String getYear()
+	{
+		return year;
+	}
+	
+	
 }
