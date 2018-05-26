@@ -4,10 +4,17 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		AnimalList ALO = new AnimalList();
+		Animal[] thelist = new Animal[2];
 		Dog d = new Dog();
 		Fish f = new Fish();
-		ALO.add(d);
-		ALO.add(f);
+		
+		thelist[0] =d;
+		thelist[1] =f;
+		
+		for (Animal x: thelist)
+		{
+			x.noise();
+		}
+		
 	}
 }
