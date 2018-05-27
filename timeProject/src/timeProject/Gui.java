@@ -21,6 +21,12 @@ public class Gui extends JFrame {
 		reg = new JButton("reg Button");
 		add(reg);
 		
+		Icon b = new ImageIcon(getClass().getResource("girl2.png"));
+		Icon x = new ImageIcon(getClass().getResource("girl1.png"));
+		custom = new JButton("Custom", b);
+		custom.setRolloverIcon(x);
+		add(custom);
+		
 		
 	}
 	
