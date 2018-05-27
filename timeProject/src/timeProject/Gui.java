@@ -26,8 +26,20 @@ public class Gui extends JFrame {
 		custom = new JButton("Custom", b);
 		custom.setRolloverIcon(x);
 		add(custom);
+	
+		HandlerClass handler = new HandlerClass();
+		reg.addActionListener(handler);
+		custom.addActionListener(handler);
 		
-		
+	}
+	private class HandlerClass implements ActionListener
+	{
+		public void actionPerformed(ActionEvent event)
+		{
+			JOptionPane.showMessageDialog(null,
+					String.format("%s,",event.getActionCommand(),
+							"yellow", JOptionPane.INFORMATION_MESSAGE));
+		}
 	}
 	
 }
