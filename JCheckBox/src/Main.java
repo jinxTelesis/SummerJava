@@ -1,5 +1,3 @@
-package timeProject;
-
 import javax.swing.JFrame;
 
 public class Main {
@@ -8,7 +6,10 @@ public class Main {
 		
 		Gui go = new Gui();
 		go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		go.setSize(500,200);
+		go.setSize(300,200);
 		go.setVisible(true);
+		
+
 	}
+
 }
