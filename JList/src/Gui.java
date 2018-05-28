@@ -19,6 +19,20 @@ public class Gui extends JFrame{
 		list.setVisibleRowCount(4);
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		add(new JScrollPane(list));
+		
+		list.addListSelectionListener(
+				new ListSelectionListener()
+				{
+
+					@Override
+					public void valueChanged(ListSelectionEvent event) {
+						getContentPane().setBackground(colors[list.getSelectedIndex()]);
+						
+					}
+					
+				}
+				
+				);
 	}
 
 }
