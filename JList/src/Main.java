@@ -6,7 +6,7 @@ public class Main {
 		
 		Gui go = new Gui();
 		go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		go.setSize(300,200);
+		go.setSize(600,600);
 		go.setVisible(true);
 	}
 
