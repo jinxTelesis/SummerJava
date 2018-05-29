@@ -1,24 +1,19 @@
-import java.util.*;
+import java.util.*; // most of the containers are here
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		PriorityQueue<String> vlad = new PriorityQueue<String>();
+		String[] things = {"apple", "bob", "ham","bob","bacon"};
+		List<String> list = Arrays.asList(things);
 		
-		vlad.offer("first");
-		vlad.offer("second");
-		vlad.offer("third");
-		
-		System.out.printf("%s ", vlad);
+		System.out.printf("%s ", list);
 		System.out.println();
 		
-		System.out.printf("%s ", vlad.peek()); // element with highest prioryt oposite of a stack
-		
-		vlad.poll();
-		System.out.printf("s ", vlad);
-	}
+		Set<String> set = new HashSet<String>(list); // set removes duplicates
+		System.out.printf("%s ", set);
 	
 	
 
+	}
 }
