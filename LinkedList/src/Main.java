@@ -11,7 +11,8 @@ public class Main {
 		Collections.sort(ListL);
 		System.out.printf("%s\n", ListL);
 		
-		
+		Collections.sort(ListL, Collections.reverseOrder());
+		System.out.printf("%s\n", ListL);
 
 	}
 }
