@@ -5,39 +5,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//create an array and convert to list
-		Character[] rayball = {'p', 'w', 'O'};
-		List<Character> ListL = Arrays.asList(rayball);
-		System.out.println("List is : ");
-		output(ListL); // fill in method later
-
-		//Reverse and print out the list
-		Collections.reverse(ListL);
-		System.out.println("After reverse : ");
-		output(ListL);
+		//convert stuff array to a list
+		String[] stuff = {"great", "notsoGreat", "cheese", "grain","walk"};
+		List<String> Listone = Arrays.asList(stuff);
 		
-		//create new array and a new list
-		Character[] newRRRRRay = new Character[3];
-		List<Character> ListTwo = Arrays.asList(newRRRRRay);
+		ArrayList<String> list22 = new ArrayList<String>();
+		list22.add("youtube");
+		list22.add("google");
+		list22.add("digg");
 		
-		// copy contents of list into list copy
-		Collections.copy(ListTwo, ListL);
-		System.out.println("Copy of list : ");
-		output(ListTwo);
+		for(String x : Listone)
+			System.out.printf("%s ", x);
 		
-		// fill collection with stuff
-		Collections.fill(ListTwo,'A');
-		System.out.println("After filling the list : ");
-		output(ListTwo);
+		Collections.addAll(list22, stuff);
+		
+		System.out.println();
+		for(String x : list22)
+			System.out.printf("%s ", x);
 	}
 	
-	// print method
-	private static void output(List<Character> ListL) {
-		
-		for(Character work: ListL)
-		{
-			System.out.printf("%s ", work);
-		}
-		System.out.println();
-	}
+	
 }
