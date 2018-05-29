@@ -14,6 +14,9 @@ public class Main {
 		System.out.println();
 		
 		System.out.printf("%s ", vlad.peek()); // element with highest prioryt oposite of a stack
+		
+		vlad.poll();
+		System.out.printf("s ", vlad);
 	}
 	
 	
