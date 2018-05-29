@@ -22,7 +22,15 @@ public class Main {
 			System.out.printf("%s ", list1.get(i));
 		}
 		
-
+		editlist(list1, list2);
+		System.out.println();
 	}
 
+	public static void editlist(Collection<String> l1, Collection<String> l2) {
+		Iterator<String> it = l1.iterator();
+		while(it.hasNext()) {
+			if(l2.contains(it.next()))
+				it.remove();
+		}
+	}
 }
