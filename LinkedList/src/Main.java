@@ -22,6 +22,10 @@ public class Main {
 		System.out.println();
 		for(String x : list22)
 			System.out.printf("%s ", x);
+		
+		System.out.println(Collections.frequency(list22, "digg"));
+		
+		
 	}
 	
 	
