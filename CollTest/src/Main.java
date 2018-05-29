@@ -4,6 +4,8 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
+		int update = 10;
+		
 		String[] identifier = {"eggs", "lasers","hats", "pie"};
 		List<String> list1 = new ArrayList<String>();
 		
