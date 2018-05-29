@@ -23,4 +23,10 @@ public class Main {
 			System.out.printf("%s ", x);
 		System.out.println();
 	}
+	
+	// generic method
+	public static <T> void printMe(T[] x) {
+		for(T b : x)
+			System.out.printf("%s ", b);
+	}
 }
