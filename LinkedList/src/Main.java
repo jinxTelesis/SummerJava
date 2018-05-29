@@ -25,6 +25,15 @@ public class Main {
 		
 		System.out.println(Collections.frequency(list22, "digg"));
 		
+		boolean tof = Collections.disjoint(Listone, list22);
+		System.out.println(tof); // false has elements in common
+		
+		if(tof)
+			System.out.println("These list do not have anything in common");
+		else
+			System.out.println("These list must have something in common!");
+		
+		
 		
 	}
 	
