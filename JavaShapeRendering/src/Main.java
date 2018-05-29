@@ -6,6 +6,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		int rank = 10;
+		
 		JFrame f = new JFrame("Title");
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
