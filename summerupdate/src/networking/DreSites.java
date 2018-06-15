@@ -10,6 +10,7 @@ import java.util.HashMap;
 import javax.swing.JApplet;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
@@ -46,6 +47,7 @@ public class DreSites extends JApplet {
 					
 				}
 				);
+		add(new JScrollPane(mainList), BorderLayout.CENTER);
 		
 	}
 
