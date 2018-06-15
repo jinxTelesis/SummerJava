@@ -21,7 +21,7 @@ public class Dre extends JApplet {
 	}
 		public void paint(Graphics g) {
 			super.paint(g);
-			g.drawString("The sum is ", 25, 30);
+			g.drawString("The sum is " + sum, 25, 30);
 		}
 		
 
