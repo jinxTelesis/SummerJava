@@ -12,5 +12,14 @@ public class DreSites extends JApplet {
 	private HashMap<String, URL> websiteInfo;
 	private ArrayList<String> titles;
 	private JList mainList;
+	
+	//init
+	public void init() {
+		websiteInfo = new HashMap<String, URL>();
+		titles = new ArrayList<String>();
+		
+		
+	}
+	
 
 }
