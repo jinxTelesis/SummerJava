@@ -2,6 +2,7 @@ package networking;
 
 import java.applet.AppletContext;
 import java.awt.BorderLayout;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,6 +41,7 @@ public class DreSites extends JApplet {
 						Object object = mainList.getSelectedValue();
 						URL newDocument = websiteInfo.get(object);
 						AppletContext browser = getAppletContext();
+						browser.showDocument(newDocument);
 					}
 					
 				}
@@ -48,7 +50,22 @@ public class DreSites extends JApplet {
 	}
 
 	private void grabHTMLInfo() {
+		String title;
+		String address;
+		URL url; // url object
+		int counter = 0;
+		title = getParameter("title" + counter);
 		
+		while(title != null) {
+			address = getParameter("address" + counter);
+			// hashmap only stores URLs
+			try {
+				url = new URL(address);
+			}
+			catch(MalformedURLException urlException) {
+				urlException.printStackTrace();
+			}
+		}
 		
 	}
 	
