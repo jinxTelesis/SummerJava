@@ -1,8 +1,11 @@
 package chatserver;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
+import java.net.Socket;
 
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
@@ -17,5 +20,20 @@ public class Server extends JFrame{
 	private ObjectOutputStream output;
 	private ObjectInputStream input;
 	private ServerSocket server;
+	private Socket connection;
+	
+	public Server() {
+		super("Dre's Instant Messenger");
+		userText = new JTextField();
+		userText.setEditable(false);
+		userText.addActionListener(
+				new ActionListener() {
+					public void actionPerformed(ActionEvent event) {
+						sendMessage(event.getActionCommand());
+					}
+				}
+				);
+		
+	}
 
 }
