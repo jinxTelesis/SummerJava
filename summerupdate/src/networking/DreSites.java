@@ -61,10 +61,14 @@ public class DreSites extends JApplet {
 			// hashmap only stores URLs
 			try {
 				url = new URL(address);
+				websiteInfo.put(title, url);
+				titles.add(title);
 			}
 			catch(MalformedURLException urlException) {
 				urlException.printStackTrace();
 			}
+			++counter;
+			title = getParameter("title"+counter);
 		}
 		
 	}
