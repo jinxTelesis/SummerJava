@@ -1,5 +1,6 @@
 package drawoval;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JFrame;
@@ -26,13 +27,10 @@ public class TheWindow extends JFrame {
 				new ChangeListener() {
 					public void stateChanged(ChangeEvent e)
 					{
-						myPanel.setD(slider.getValue());
-					}
-					
-				}
-				
+						myPanel.setD(slider.getValue());}}
 				);
-		
+		add(slider, BorderLayout.SOUTH);
+		add(myPanel, BorderLayout.CENTER);
 		
 	}
 
