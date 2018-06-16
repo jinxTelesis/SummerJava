@@ -3,6 +3,7 @@ package chatserver;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
@@ -35,12 +36,45 @@ public class Server extends JFrame{
 						userText.setText("");
 					}
 				}
-				);
-				add(userText, BorderLayout.NORTH);
-				chatWindow = new JTextArea();
-				add(new JScrollPane(chatWindow));
-				setSize(300,150);
-				setVisible(true);
+		);
+		add(userText, BorderLayout.NORTH);
+		chatWindow = new JTextArea();
+		add(new JScrollPane(chatWindow));
+		setSize(300,150);
+		setVisible(true);
+	}
+	
+	// set up and run the server
+	public void startRunning() {
+		try {
+			server = new ServerSocket(6789, 100);
+			while(true) {
+				try {
+					//connect and have conversation
+					waitForConnection();
+					setupStreams();
+					whileChatting();
+				}
+				catch(EOFException eofException) {
+					showMessage("\n Server ended the connection! ");
+				}
+				finally {
+					closeCrap();
+				}
+			}
+		}
+		catch(IOException ioException) {
+			ioException.printStackTrace();
+		}
+		
+		
+	}
+
+	private void waitForConnection() throws IOException{
+		showMessage(" Waiting for someone to connect.. \n");
+		connection = server.accept();
+		showMessage(" Now connected to " + connection.getInetAddress().getHostAddress());
+		
 	}
 
 }
