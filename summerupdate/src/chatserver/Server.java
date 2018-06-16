@@ -3,6 +3,7 @@ package chatserver;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -93,7 +94,7 @@ public class Server extends JFrame{
 	private void whileChatting() throws IOException{
 		String message =" You are now connected! ";
 		sendMessage(message);
-		ableToType(true);
+		abletoType(true);
 		
 		do {
 			try { // input stream or socket 
@@ -109,7 +110,7 @@ public class Server extends JFrame{
 	// cleanup after chatting
 	private void closeCrap() {
 		showMessage("\n Closing connections...");
-		ableToType(false);
+		abletoType(false);
 		try {
 			output.close();
 			input.close();
@@ -140,5 +141,17 @@ public class Server extends JFrame{
 					}
 				}
 			);
+	}
+	
+	// let the user type stuff into their box
+	private void abletoType(final boolean tof) {
+		SwingUtilities.invokeLater(
+				new Runnable() {
+					public void run() {
+						userText.setEditable(tof);
+					}
+				}
+		);
+	
 	}
 }
