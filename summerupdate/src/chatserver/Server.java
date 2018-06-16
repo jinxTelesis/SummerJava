@@ -70,11 +70,38 @@ public class Server extends JFrame{
 		
 	}
 
+	
+
 	private void waitForConnection() throws IOException{
 		showMessage(" Waiting for someone to connect.. \n");
 		connection = server.accept();
 		showMessage(" Now connected to " + connection.getInetAddress().getHostAddress());
 		
+	}
+	
+	private void setupStreams() throws IOException {
+		output = new ObjectOutputStream(connection.getOutputStream());
+		output.flush(); // how you flush the buffer
+		
+		input = new ObjectInputStream(connection.getInputStream());
+		showMessage("\n Streams are not setup! \n");
+	}
+	
+	private void whileChatting() throws IOException{
+		String message =" You are now connected! ";
+		sendMessage(message);
+		ableToType(true);
+		
+		do {
+			try { // input stream or socket 
+				message = (String) input.readObject();
+				showMessage("\n " + message);
+			}
+			catch(ClassNotFoundException classNotFoundException)
+			{
+				showMessage("\n idk wtf that user sent");
+			}
+		}while(!message.equals("Client - end"));
 	}
 
 }
