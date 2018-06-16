@@ -72,6 +72,8 @@ public class Server extends JFrame{
 
 	
 
+	
+
 	private void waitForConnection() throws IOException{
 		showMessage(" Waiting for someone to connect.. \n");
 		connection = server.accept();
@@ -103,5 +105,26 @@ public class Server extends JFrame{
 			}
 		}while(!message.equals("Client - end"));
 	}
-
+	// cleanup after chatting
+	private void closeCrap() {
+		showMessage("\n Closing connections...");
+		ableToType(false);
+		try {
+			output.close();
+			input.close();
+			connection.close();
+		}catch(IOException ioException)
+		{
+			ioException.printStackTrace();
+		}
+		
+	}
+	
+	private void sendMessage(String message) {
+		try {
+			output.writeObject("SERVER -  " + message);
+		}catch(IOException ioException) {
+			chatWindow.append("\n ERROR: DUDE I CANT SEND THAT MESSAGE");
+		}
+	}
 }
