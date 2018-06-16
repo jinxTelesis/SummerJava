@@ -6,6 +6,7 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.Socket;
 import java.awt.*;
 import javax.swing.JFrame;
@@ -57,6 +58,12 @@ public class ChatClient extends JFrame{
 		}finally {
 			closeCrap();
 		}
+	}
+	
+	private void connectToServer() throws IOException{
+		showMessage("Attempting connection... \n");
+		connection = new Socket(InetAddress.getByName(serverIP), 6789);
+		showMessage("Connected to: " + connection.getInetAddress());
 	}
 	
 }
