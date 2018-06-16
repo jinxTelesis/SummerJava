@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 public class Server extends JFrame{
 	
@@ -123,8 +124,21 @@ public class Server extends JFrame{
 	private void sendMessage(String message) {
 		try {
 			output.writeObject("SERVER -  " + message);
+			output.flush();
+			showMessage("\nSERVER - " + message);
 		}catch(IOException ioException) {
 			chatWindow.append("\n ERROR: DUDE I CANT SEND THAT MESSAGE");
 		}
+	}
+	
+	//update chatWindow // thread to update gui
+	private void showMessage(final String text) {
+		SwingUtilities.invokeLater(
+				new Runnable() {
+					public void run() {
+						chatWindow.append(text);
+					}
+				}
+			);
 	}
 }
