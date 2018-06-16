@@ -22,6 +22,7 @@ public class ChatClient extends JFrame{
 	private ObjectInputStream input;
 	private String serverIP;
 	private Socket connection;
+	private String message;
 	
 	//constructor
 	public ChatClient(String host){
@@ -60,10 +61,65 @@ public class ChatClient extends JFrame{
 		}
 	}
 	
+	
+
 	private void connectToServer() throws IOException{
 		showMessage("Attempting connection... \n");
 		connection = new Socket(InetAddress.getByName(serverIP), 6789);
 		showMessage("Connected to: " + connection.getInetAddress());
 	}
 	
+	private void setupStreams() throws IOException{
+		output = new ObjectOutputStream(connection.getOutputStream());
+		output.flush();
+		input = new ObjectInputStream(connection.getInputStream());
+		showMessage("\n Dude your streams are now good to go!\n");
+		
+	}
+	
+	//
+	private void whileChatting() throws IOException{
+		ableToType(true);
+		do {
+			try {//string cast of the object
+				message = (String) input.readObject();
+				showMessage("\n" + message);
+			}
+			catch(ClassNotFoundException classNotfoundException) {
+				showMessage("\n I don't know that object type");
+			}
+			
+			
+		}while(!message.equals("SERVER - END"));
+	}
+	
+	//close the streams and sockets
+	private void closeCrap() {
+		showMessage("\n closing crap down...");
+		ableToType(false);
+		
+		try {
+			output.close();
+			input.close();
+			connection.close();
+			
+		} catch(IOException ioException) {
+			ioException.printStackTrace();
+			
+		}
+	}
+	
+	// send message to server 
+	private void sendMessage(String message) {
+		try {
+			output.writeObject("CLIENT - " + message);
+			output.flush();
+			showMessage("\nCLIENT - " + message);
+		}
+		catch(IOException ioException) {
+			chatWindow.append("\n something messed up sending message bud!");
+		}
+		
+		
+	}
 }
