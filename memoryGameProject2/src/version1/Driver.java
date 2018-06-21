@@ -13,6 +13,7 @@ public class Driver {
 				memJFrame frame = new memJFrame();
 				frame.setVisible(true);
 				frame.setSize(400,400);
+				//frame.pack();
 				frame.setResizable(false);
 				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			
