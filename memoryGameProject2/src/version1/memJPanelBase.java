@@ -5,12 +5,16 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
 
 
 public class memJPanelBase extends JPanel {
+	
+	private final int hGap = 5;
+    private final int vGap = 5;
 	
 	memJPanelBase(){
 	init();	// method for construction
@@ -31,7 +35,7 @@ public class memJPanelBase extends JPanel {
 		loweredbevel = BorderFactory.createLoweredBevelBorder();
 		empty = BorderFactory.createEmptyBorder();
 		
-		FlowLayout flowLayObj = new FlowLayout();
+		FlowLayout flowLayObj = new FlowLayout(0,35, 35);
 		
 		memJPanelUpper jpUpper = new memJPanelUpper();
 		jpUpper.setBorder(blackline);
