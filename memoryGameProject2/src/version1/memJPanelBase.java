@@ -35,13 +35,13 @@ public class memJPanelBase extends JPanel {
 		loweredbevel = BorderFactory.createLoweredBevelBorder();
 		empty = BorderFactory.createEmptyBorder();
 		
-		FlowLayout flowLayObj = new FlowLayout(0,35, 35);
+		FlowLayout flowLayObj = new FlowLayout(0,115, 10);
 		
 		memJPanelUpper jpUpper = new memJPanelUpper();
 		jpUpper.setBorder(blackline);
 		jpUpper.setLayout(flowLayObj);
 		
-		GridLayout GridLayObj = new GridLayout(5,7);
+		GridLayout GridLayObj = new GridLayout(6,6);
 		memJPanelMid jpMid = new memJPanelMid();
 		jpMid.setLayout(GridLayObj);
 		jpMid.setBorder(blackline);
