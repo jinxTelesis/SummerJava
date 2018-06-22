@@ -80,7 +80,7 @@ public class memJPanelBot extends JPanel implements ActionListener {
 		switch(cmd) {
 		
 			case CONTINUE:
-				
+				// continue only calls flip over method
 				
 				
 				break;
@@ -97,9 +97,6 @@ public class memJPanelBot extends JPanel implements ActionListener {
 						JOptionPane joption = new JOptionPane();
 						ExitJFrame frame = new ExitJFrame();
 						frame.setVisible(false);
-						//frame.setSize(300,240);
-						//frame.pack();
-						//frame.setResizable(false);
 						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 						int dialogResult = joption.YES_NO_OPTION;
 						dialogResult = joption.showConfirmDialog(null,"Would you like to exit?");

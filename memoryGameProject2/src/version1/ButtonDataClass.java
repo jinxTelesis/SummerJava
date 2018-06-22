@@ -1,0 +1,32 @@
+package version1;
+
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
+public class ButtonDataClass {
+	
+	private static final String imageName = "images/qmark.jpg";
+	private String imageHandle; // string file name
+	private ImageIcon ic_reg; // image
+	private ImageIcon ic_logo; // icon resize
+	private JButton imageButtons; // not sure if the class should store a JButton; we will see
+	private ImageIcon ic_regQue; // question mark image
+	private ImageIcon ic_logoQue;
+	private boolean isVisible;
+	
+	public ButtonDataClass(String imageHandle) {
+		this.imageHandle = imageHandle;
+		this.ic_reg = new ImageIcon(imageHandle);
+		this.ic_logo = new ImageIcon(((Image) ic_reg.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
+		this.ic_regQue = new ImageIcon(imageName);
+		this.ic_logoQue = new ImageIcon(((Image) ic_regQue.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
+		this.isVisible = false;
+		this.imageButtons = new JButton(ic_regQue);
+		
+	}
+
+}
+// test equal if the image name is equal
+// don't need a to string or a compare

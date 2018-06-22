@@ -11,12 +11,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-// if exit is clicked bring up new frame and panel asking to exit
 // need to build her special constructor
 // need to test if one card object equals another
 // might need to make a card object not just these image arrays
-// gui needs popup mess to quit
-// 
+
 
 public class memJPanelMid extends JPanel implements ActionListener {
 	
