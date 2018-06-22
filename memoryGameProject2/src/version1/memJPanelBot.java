@@ -10,9 +10,11 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
+
 
 
 public class memJPanelBot extends JPanel implements ActionListener {
@@ -22,6 +24,7 @@ public class memJPanelBot extends JPanel implements ActionListener {
 	private JButton continueBut;
 	private JButton exitBut;
 	private JLabel spacer, spacer1, spacer2, spacer3, spacer4;
+	
 	public static final String EXIT = "Exit";
 	public static final String CONTINUE = "Continue";
 	
@@ -38,6 +41,8 @@ public class memJPanelBot extends JPanel implements ActionListener {
 		spacer2 = new JLabel(" ");
 		spacer3 = new JLabel("");
 		spacer4 = new JLabel(" ");
+		
+		
 		
 		continueBut = new JButton(CONTINUE);
 		exitBut = new JButton(EXIT);
@@ -83,16 +88,34 @@ public class memJPanelBot extends JPanel implements ActionListener {
 				
 			case EXIT:
 				
+				//showConfirmDialog(null,"Would you like to exit?")
+				
 				javax.swing.SwingUtilities.invokeLater(new Runnable()
 				{
 					public void run()
 					{
+						JOptionPane joption = new JOptionPane();
 						ExitJFrame frame = new ExitJFrame();
-						frame.setVisible(true);
-						frame.setSize(300,240);
+						frame.setVisible(false);
+						//frame.setSize(300,240);
 						//frame.pack();
-						frame.setResizable(false);
+						//frame.setResizable(false);
 						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						int dialogResult = joption.YES_NO_OPTION;
+						dialogResult = joption.showConfirmDialog(null,"Would you like to exit?");
+						add(joption);
+						if(dialogResult == JOptionPane.YES_OPTION)
+						{
+							System.exit(0);
+						}
+						else if(dialogResult == JOptionPane.NO_OPTION)
+						{
+							frame.dispose();
+						}
+						else
+						{
+							frame.dispose();
+						}
 					
 					}
 					
