@@ -5,12 +5,14 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
+
 
 public class memJPanelBot extends JPanel implements ActionListener {
 	
@@ -19,6 +21,8 @@ public class memJPanelBot extends JPanel implements ActionListener {
 	private JButton continueBut;
 	private JButton exitBut;
 	private JLabel spacer, spacer1, spacer2, spacer3, spacer4;
+	public static final String EXIT = "Exit";
+	public static final String CONTINUE = "Continue";
 	
 	public memJPanelBot() {
 		blackline = BorderFactory.createLineBorder(Color.black);
@@ -34,8 +38,8 @@ public class memJPanelBot extends JPanel implements ActionListener {
 		spacer3 = new JLabel("");
 		spacer4 = new JLabel(" ");
 		
-		continueBut = new JButton("Continue");
-		exitBut = new JButton("Exit");
+		continueBut = new JButton(CONTINUE);
+		exitBut = new JButton(EXIT);
 		
 		spacer.setAlignmentX(LEFT_ALIGNMENT);
 		continueBut.setAlignmentX(CENTER_ALIGNMENT);
@@ -58,10 +62,30 @@ public class memJPanelBot extends JPanel implements ActionListener {
 		continueBut.addActionListener(this);
 		exitBut.addActionListener(this);
 		
+		
+		
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	@Override //e.getActionCommand() == Actions.Button00.name()
+	public void actionPerformed(ActionEvent e) {
+		String cmd;
+		cmd = e.getActionCommand();
+		
+		switch(cmd) {
+		
+			case CONTINUE:
+				
+				
+				break;
+				
+				
+			case EXIT:
+				
+				
+				break;
+		
+		
+		}
 		
 		
 	}
