@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
@@ -76,11 +77,26 @@ public class memJPanelBot extends JPanel implements ActionListener {
 			case CONTINUE:
 				
 				
+				
 				break;
 				
 				
 			case EXIT:
 				
+				javax.swing.SwingUtilities.invokeLater(new Runnable()
+				{
+					public void run()
+					{
+						ExitJFrame frame = new ExitJFrame();
+						frame.setVisible(true);
+						frame.setSize(300,240);
+						//frame.pack();
+						frame.setResizable(false);
+						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					
+					}
+					
+				});
 				
 				break;
 		
