@@ -27,7 +27,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 			imageButtons[i].setPreferredSize(new Dimension(175, 100));
 		}
 		
-		ImageIcon ic_reg = new ImageIcon("images/goth.jpg");
+		ImageIcon ic_reg = new ImageIcon("images/image1.jpg");
 		ImageIcon ic_logo = new ImageIcon(((Image) ic_reg.getImage()).getScaledInstance(70, 70, Image.SCALE_FAST));
 		
 //		try {
