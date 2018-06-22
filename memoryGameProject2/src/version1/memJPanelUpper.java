@@ -10,6 +10,7 @@ import javax.swing.border.EtchedBorder;
 
 public class memJPanelUpper extends JPanel {
 	
+
 	Border blackline, raisedetched, loweredetched,
 	raisedbevel, loweredbevel, empty;
 	
