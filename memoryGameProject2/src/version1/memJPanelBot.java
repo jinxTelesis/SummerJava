@@ -1,10 +1,68 @@
 package version1;
 
-import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class memJPanelBot extends JPanel {
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.swing.border.EtchedBorder;
+
+public class memJPanelBot extends JPanel implements ActionListener {
+	
+	Border blackline, raisedetched, loweredetched,
+	raisedbevel, loweredbevel, empty;
+	private JButton continueBut;
+	private JButton exitBut;
+	private JLabel spacer, spacer1, spacer2, spacer3, spacer4;
 	
 	public memJPanelBot() {
+		blackline = BorderFactory.createLineBorder(Color.black);
+		raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED);
+		loweredetched = BorderFactory.createEtchedBorder(EtchedBorder.LOWERED);
+		raisedbevel = BorderFactory.createRaisedBevelBorder();
+		loweredbevel = BorderFactory.createLoweredBevelBorder();
+		empty = BorderFactory.createEmptyBorder();
+		
+		spacer = new JLabel(" ");
+		spacer1 = new JLabel("");
+		spacer2 = new JLabel(" ");
+		spacer3 = new JLabel("");
+		spacer4 = new JLabel(" ");
+		
+		continueBut = new JButton("Continue");
+		exitBut = new JButton("Exit");
+		
+		spacer.setAlignmentX(LEFT_ALIGNMENT);
+		continueBut.setAlignmentX(CENTER_ALIGNMENT);
+		continueBut.setPreferredSize(new Dimension(125,40));
+		
+		continueBut.setBorder(raisedetched);
+		exitBut.setAlignmentX(LEFT_ALIGNMENT);
+		exitBut.setBorder(raisedetched);
+		exitBut.setPreferredSize(new Dimension(80,40));
+		
+		add(spacer);
+		add(spacer1);
+		add(spacer4);
+		add(continueBut);
+		add(spacer2);
+		add(spacer3);
+		add(exitBut);
+		
+		
+		continueBut.addActionListener(this);
+		exitBut.addActionListener(this);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		
 		
 	}
 

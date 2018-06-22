@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
@@ -15,6 +16,7 @@ public class memJPanelBase extends JPanel {
 	
 	private final int hGap = 5;
     private final int vGap = 5;
+    
 	
 	memJPanelBase(){
 	init();	// method for construction
@@ -47,8 +49,9 @@ public class memJPanelBase extends JPanel {
 		jpMid.setBorder(blackline);
 		
 		
+		FlowLayout flowLayObj2 = new FlowLayout(0,105, 10);
 		memJPanelBot jpBot = new memJPanelBot();
-		jpBot.setLayout(flowLayObj);
+		jpBot.setLayout(flowLayObj2);
 		jpBot.setBorder(blackline);
 		
 		
