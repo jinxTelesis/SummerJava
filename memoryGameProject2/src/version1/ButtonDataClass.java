@@ -7,6 +7,8 @@ import javax.swing.JButton;
 
 public class ButtonDataClass {
 	
+	private static int ButtonNameInc;
+	private String ButtonName;
 	private static final String imageName = "images/qmark.jpg";
 	private String imageHandle; // string file name
 	private ImageIcon ic_reg; // image
@@ -23,7 +25,8 @@ public class ButtonDataClass {
 		this.ic_regQue = new ImageIcon(imageName);
 		this.ic_logoQue = new ImageIcon(((Image) ic_regQue.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
 		this.isVisible = false;
-		this.imageButtons = new JButton(ic_regQue);
+		this.imageButtons = new JButton(ic_logo);
+		//this.imageButtons = new JButton(ic_regQue);
 	}
 
 	public ImageIcon getIc_reg() {

@@ -36,30 +36,47 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	private ImageIcon ic_regQue;
 	private ImageIcon ic_logoQue;
 	
+	private ButtonDataClass[] buttonsData = new ButtonDataClass[36];
 	
-	public memJPanelMid() {
-		//C:\Users\dremo\eclipse-workspace
-		ic_regQue = new ImageIcon("images/qmark.jpg"); // the question mark
-		ic_logoQue = new ImageIcon(((Image) ic_regQue.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST)); //the question mark
+	
+	public memJPanelMid() {//C:\Users\dremo\eclipse-workspace
 		
-		imageButtons = new JButton[36]; 
-		
-		for (int i = 0; i < 36; i++) {
-			ic_reg[i] = new ImageIcon("images/image" + Integer.toString(i) +".jpg");
-			ic_logo[i] = new ImageIcon(((Image) ic_reg[i].getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
+		for(int i = 0; i < 36; i++) // hmm worked
+		{
+			buttonsData[i] = new ButtonDataClass("images/image" + Integer.toString(i) + ".jpg"); 
 		}
 		
-		ic_logo = RandomizeArray(ic_logo); // is this valid in java? bad to reorganize an array while using it in python
+		imageButtons = new JButton[36];
 		
-		for (int i = 0; i < 36; i++) {
-			imageButtons[i] = new JButton(ic_logo[i]);
-			add(imageButtons[i]);
-			imageButtons[i].setActionCommand(Actions.Button00.name());
-			imageButtons[i].addActionListener(this);
-			imageButtons[i].setPreferredSize(new Dimension(175, 100));
+		for(int i = 0; i < 36; i++) {
+			
+			add(buttonsData[i].getImageButtons());
+			buttonsData[i].getImageButtons().setPreferredSize(new Dimension(175, 100));
+			buttonsData[i].getImageButtons().addActionListener(this);
+			
 		}
 		
-		hideCard(imageButtons, ic_logoQue);
+//		ic_regQue = new ImageIcon("images/qmark.jpg"); // the question mark
+//		ic_logoQue = new ImageIcon(((Image) ic_regQue.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST)); //the question mark
+//		
+//		imageButtons = new JButton[36]; 
+//		
+//		for (int i = 0; i < 36; i++) {
+//			ic_reg[i] = new ImageIcon("images/image" + Integer.toString(i) +".jpg");
+//			ic_logo[i] = new ImageIcon(((Image) ic_reg[i].getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
+//		}
+//		
+//		ic_logo = RandomizeArray(ic_logo); // is this valid in java? bad to reorganize an array while using it in python
+//		
+//		for (int i = 0; i < 36; i++) {
+//			imageButtons[i] = new JButton(ic_logo[i]);
+//			add(imageButtons[i]);
+//			imageButtons[i].setActionCommand(Actions.Button00.name());
+//			imageButtons[i].addActionListener(this);
+//			imageButtons[i].setPreferredSize(new Dimension(175, 100));
+//		}
+		
+		//hideCard(imageButtons, ic_logoQue);
 		//jb00.setActionCommand(Actions.Button00.name());
 		//jb00.addActionListener(this);
 
