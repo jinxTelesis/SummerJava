@@ -24,9 +24,41 @@ public class ButtonDataClass {
 		this.ic_logoQue = new ImageIcon(((Image) ic_regQue.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
 		this.isVisible = false;
 		this.imageButtons = new JButton(ic_regQue);
-		
 	}
 
+	public ImageIcon getIc_reg() {
+		return ic_reg;
+	}
+
+	public void setIc_reg(ImageIcon ic_reg) {
+		this.ic_reg = ic_reg;
+	}
+
+	public boolean isVisible() {
+		return isVisible;
+	}
+
+	public void setVisible(boolean isVisible) {
+		this.isVisible = isVisible;
+	}
+
+	public JButton getImageButtons() {
+		return imageButtons;
+	}
+	
+	public boolean equals(Object o)
+	{
+		if(o instanceof ButtonDataClass)
+		{
+			ButtonDataClass OtherObj = (ButtonDataClass)o;
+			if(this.ic_reg == OtherObj.ic_reg)
+			{
+				return true;
+			}
+		}
+		return false;
+		
+	}
 }
 // test equal if the image name is equal
 // don't need a to string or a compare
