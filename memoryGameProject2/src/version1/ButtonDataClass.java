@@ -51,7 +51,7 @@ public class ButtonDataClass {
 		if(o instanceof ButtonDataClass)
 		{
 			ButtonDataClass OtherObj = (ButtonDataClass)o;
-			if(this.ic_reg == OtherObj.ic_reg)
+			if(this.imageHandle.equals(OtherObj.imageHandle))
 			{
 				return true;
 			}
