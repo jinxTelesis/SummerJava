@@ -1,6 +1,8 @@
 package version1;
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,6 +21,8 @@ public class ButtonDataClass {
 	private boolean isVisible;
 	
 	public ButtonDataClass(String imageHandle) {
+		ButtonNameInc++;
+		this.ButtonName = "Button" + Integer.toString(ButtonNameInc);
 		this.imageHandle = imageHandle;
 		this.ic_reg = new ImageIcon(imageHandle);
 		this.ic_logo = new ImageIcon(((Image) ic_reg.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
@@ -27,6 +31,10 @@ public class ButtonDataClass {
 		this.isVisible = false;
 		this.imageButtons = new JButton(ic_logo);
 		//this.imageButtons = new JButton(ic_regQue);
+	}
+
+	public String getButtonName() {
+		return ButtonName;
 	}
 
 	public ImageIcon getIc_reg() {
@@ -38,10 +46,26 @@ public class ButtonDataClass {
 	}
 
 	public boolean isVisible() {
+		if(isVisible == false)
+		{
+			imageButtons.setIcon(ic_logo);
+		}
+		else
+		{
+			imageButtons.setIcon(ic_logoQue);
+		}
 		return isVisible;
 	}
 
 	public void setVisible(boolean isVisible) {
+		if(isVisible == false)
+		{
+			imageButtons.setIcon(ic_logo);
+		}
+		else
+		{
+			imageButtons.setIcon(ic_logoQue);
+		}
 		this.isVisible = isVisible;
 	}
 
@@ -62,6 +86,7 @@ public class ButtonDataClass {
 		return false;
 		
 	}
+
 }
 // test equal if the image name is equal
 // don't need a to string or a compare
