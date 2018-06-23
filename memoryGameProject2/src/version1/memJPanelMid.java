@@ -240,207 +240,276 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	
 	@Override // should do enumerations for this easier than // could save last object clicked
 	public void actionPerformed(ActionEvent e) {
-		
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
+		// check by iterating over both values in a parelle array of sorts
 		
 		if(e.getActionCommand() == "Button0"){
 			
 			buttonsData[0].flipCards();
-			lastClicked.remove();
-			System.out.println(lastClicked.remove());
 			lastClicked.add(0);
-			
+			int pollIt = lastClicked.poll();
+			System.out.println(pollIt);
 		}
 		
 		if(e.getActionCommand() == "Button1"){
 			
 			buttonsData[1].flipCards();
+			lastClicked.add(1);
 			lastClicked.remove();
 			System.out.println(lastClicked.remove());
-			lastClicked.add(1);
+			
 		}
 		
 		if(e.getActionCommand() == "Button2"){
 
 			buttonsData[2].flipCards();
+			lastClicked.add(2);
 			lastClicked.remove();
 			System.out.println(lastClicked.remove());
-			lastClicked.add(2);
+			
 		}
 		
 		if(e.getActionCommand() == "Button3"){
 			buttonsData[3].flipCards();
+			lastClicked.add(3);
 			lastClicked.remove();
 			System.out.println(lastClicked.remove());
-			lastClicked.add(3);
+			
 			
 		}
 		
 		if(e.getActionCommand() == "Button4"){
 			buttonsData[4].flipCards();
-			lastClicked.remove();
-			System.out.println(lastClicked.remove());
 			lastClicked.add(4);
-			
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
 		}
 		
 		if(e.getActionCommand() == "Button5") {
 			buttonsData[5].flipCards();
-			lastClicked.remove();
-			System.out.println(lastClicked.remove());
 			lastClicked.add(5);
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			
 			
 		}
 		if(e.getActionCommand() == "Button6"){
 			buttonsData[6].flipCards();
-			lastClicked.remove();
+			lastClicked.remove(1);
 			System.out.println(lastClicked.remove());
 			lastClicked.add(6);
 		}
 		
 		if(e.getActionCommand() == "Button7"){
 			buttonsData[7].flipCards();
-			buttonsData[6].flipCards();
-			lastClicked.remove();
+			lastClicked.remove(1);
 			System.out.println(lastClicked.remove());
-			lastClicked.add(6);
+			lastClicked.add(7);
 		}
 		
 		if(e.getActionCommand() == "Button8"){
-			
 			buttonsData[8].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(8);
 		}
 		
 		if(e.getActionCommand() == "Button9"){
-			
 			buttonsData[9].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(9);
 		}
 		
 		if(e.getActionCommand() == "Button10"){
-			
 			buttonsData[10].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(10);
 		}
 		
 		if(e.getActionCommand() == "Button11") {
-			
 			buttonsData[11].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(11);
 		}
 		
 		if(e.getActionCommand() == "Button12"){
-			
 			buttonsData[12].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(12);
 		}
 		
 		if(e.getActionCommand() == "Button13"){
-			
 			buttonsData[13].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(13);
 		}
 		
 		if(e.getActionCommand() == "Button14"){
-			
 			buttonsData[14].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(14);
 		}
 		
 		if(e.getActionCommand() == "Button15"){
-			
 			buttonsData[15].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(15);
 		}
 		
 		if(e.getActionCommand() == "Button16"){
-			
 			buttonsData[16].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(16);
 		}
 		
 		if(e.getActionCommand() == "Button17") {
-			
 			buttonsData[17].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(17);
 		}
 		if(e.getActionCommand() == "Button18"){
-			
 			buttonsData[18].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(18);
 		}
 		
 		if(e.getActionCommand() == "Button19"){
-			
 			buttonsData[19].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(19);
 		}
 		
 		if(e.getActionCommand() == "Button20"){
-			
 			buttonsData[20].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(20);
 		}
 		
 		if(e.getActionCommand() == "Button21"){
-			
 			buttonsData[21].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(21);
 		}
 		
 		if(e.getActionCommand() == "Button22"){
-			
 			buttonsData[22].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(22);
 		}
 		
 		if(e.getActionCommand() == "Button23") {
-			
 			buttonsData[23].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(23);
 		}
 		
 		if(e.getActionCommand() == "Button24"){
-			
 			buttonsData[24].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(24);
 		}
 		
 		if(e.getActionCommand() == "Button25"){
-			
 			buttonsData[25].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(25);
 		}
 		
 		if(e.getActionCommand() == "Button26"){
-			
 			buttonsData[26].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(26);
 		}
 		
 		if(e.getActionCommand() == "Button27") {
-			
 			buttonsData[27].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(27);
 		}
 		if(e.getActionCommand() == "Button28"){
-			
 			buttonsData[28].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(28);
 		}
 		
 		if(e.getActionCommand() == "Button29"){
-			
 			buttonsData[29].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(29);
 		}
 		
 		if(e.getActionCommand() == "Button30"){
-			
 			buttonsData[30].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(30);
 		}
 		
 		if(e.getActionCommand() == "Button31"){
-			
 			buttonsData[31].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(31);
+			
 		}
 		
 		if(e.getActionCommand() == "Button32"){
-			
 			buttonsData[32].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(32);
 		}
 		
 		if(e.getActionCommand() == "Button33") {
-			
 			buttonsData[33].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(33);
 		}
 		
 		if(e.getActionCommand() == "Button34"){
-			
 			buttonsData[34].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(34);
 		}
 		
 		if(e.getActionCommand() == "Button35"){
-			
 			buttonsData[35].flipCards();
+			lastClicked.remove(1);
+			System.out.println(lastClicked.remove());
+			lastClicked.add(35);
 		}
 
 		
