@@ -269,26 +269,40 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		
 		if(e.getActionCommand() == "Button3"){
 			buttonsData[3].flipCards();
+			lastClicked.remove();
+			System.out.println(lastClicked.remove());
+			lastClicked.add(3);
 			
 		}
 		
 		if(e.getActionCommand() == "Button4"){
 			buttonsData[4].flipCards();
+			lastClicked.remove();
+			System.out.println(lastClicked.remove());
+			lastClicked.add(4);
 			
 		}
 		
 		if(e.getActionCommand() == "Button5") {
 			buttonsData[5].flipCards();
+			lastClicked.remove();
+			System.out.println(lastClicked.remove());
+			lastClicked.add(5);
 			
 		}
 		if(e.getActionCommand() == "Button6"){
-			
 			buttonsData[6].flipCards();
+			lastClicked.remove();
+			System.out.println(lastClicked.remove());
+			lastClicked.add(6);
 		}
 		
 		if(e.getActionCommand() == "Button7"){
-			
 			buttonsData[7].flipCards();
+			buttonsData[6].flipCards();
+			lastClicked.remove();
+			System.out.println(lastClicked.remove());
+			lastClicked.add(6);
 		}
 		
 		if(e.getActionCommand() == "Button8"){
@@ -346,86 +360,86 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		}
 		
 		if(e.getActionCommand() == "Button19"){
-			System.out.println("worked");
+			
 			buttonsData[19].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button20"){
-			System.out.println("worked");
+			
 			buttonsData[20].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button21"){
-			System.out.println("worked");
+			
 			buttonsData[21].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button22"){
-			System.out.println("worked");
+			
 			buttonsData[22].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button23") {
-			System.out.println("worked");
+			
 			buttonsData[23].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button24"){
-			System.out.println("worked");
+			
 			buttonsData[24].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button25"){
-			System.out.println("worked");
+			
 			buttonsData[25].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button26"){
-			System.out.println("worked");
+			
 			buttonsData[26].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button27") {
-			System.out.println("worked");
+			
 			buttonsData[27].flipCards();
 		}
 		if(e.getActionCommand() == "Button28"){
-			System.out.println("worked");
+			
 			buttonsData[28].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button29"){
-			System.out.println("worked");
+			
 			buttonsData[29].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button30"){
-			System.out.println("worked");
+			
 			buttonsData[30].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button31"){
-			System.out.println("worked");
+			
 			buttonsData[31].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button32"){
-			System.out.println("worked");
+			
 			buttonsData[32].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button33") {
-			System.out.println("worked");
+			
 			buttonsData[33].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button34"){
-			System.out.println("worked");
+			
 			buttonsData[34].flipCards();
 		}
 		
 		if(e.getActionCommand() == "Button35"){
-			System.out.println("worked");
+			
 			buttonsData[35].flipCards();
 		}
 
