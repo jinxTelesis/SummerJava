@@ -43,21 +43,25 @@ public class memJPanelBase extends JPanel {
 		jpUpper.setBorder(blackline);
 		jpUpper.setLayout(flowLayObj);
 		
-		GridLayout GridLayObj = new GridLayout(6,6);
+		//GridLayout GridLayObj = new GridLayout(6,6);
+		GridLayout GridLayObj = new GridLayout(2,1);
 		memJPanelMid jpMid = new memJPanelMid();
 		jpMid.setLayout(GridLayObj);
-		jpMid.setBorder(blackline);
+		
+		//FlowLayout flowLayObj2 = new FlowLayout(0,105, 10);
+		//memJPanelBot jpBot = new memJPanelBot();
+		//jpBot.setLayout(flowLayObj2);
+		//jpBot.setBorder(blackline);
+		
+		//memJPanelMid memJPanelBot
+		//FlowLayout flowLayObj2 = new FlowLayout(0,105,10);
 		
 		
-		FlowLayout flowLayObj2 = new FlowLayout(0,105, 10);
-		memJPanelBot jpBot = new memJPanelBot();
-		jpBot.setLayout(flowLayObj2);
-		jpBot.setBorder(blackline);
 		
 		
 		add(jpUpper);
 		add(jpMid);
-		add(jpBot);
+		//add(jpBot);
 		
 	}
 

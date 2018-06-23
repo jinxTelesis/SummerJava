@@ -9,6 +9,8 @@ import javax.swing.JButton;
 
 public class ButtonDataClass {
 	
+	// think easiest solution is static list for each
+	private static int flipCounter=0;
 	private static int ButtonNameInc;
 	private String ButtonName;
 	private static final String imageName = "images/qmark.jpg";
@@ -19,7 +21,11 @@ public class ButtonDataClass {
 	private ImageIcon ic_regQue; // question mark image
 	private ImageIcon ic_logoQue;
 	private boolean isVisible;
+	private boolean isMatched;
+	static boolean[] isMatchedList = new boolean[36];
 	
+	
+
 	public ButtonDataClass(String imageHandle) {
 		ButtonNameInc++;
 		this.ButtonName = "Button" + Integer.toString(ButtonNameInc);
@@ -29,8 +35,8 @@ public class ButtonDataClass {
 		this.ic_regQue = new ImageIcon(imageName);
 		this.ic_logoQue = new ImageIcon(((Image) ic_regQue.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
 		this.isVisible = false;
-		this.imageButtons = new JButton(ic_logo);
-		//this.imageButtons = new JButton(ic_regQue);
+		//this.imageButtons = new JButton(ic_logo);
+		this.imageButtons = new JButton(ic_logoQue);
 	}
 
 	public String getButtonName() {
@@ -44,9 +50,17 @@ public class ButtonDataClass {
 	public void setIc_reg(ImageIcon ic_reg) {
 		this.ic_reg = ic_reg;
 	}
+	
+	public boolean isMatched() {
+		return isMatched;
+	}
+
+	public void setMatched(boolean isMatched) {
+		this.isMatched = isMatched;
+	}
 
 	public boolean isVisible() {
-		if(isVisible == false)
+		if(isVisible == true)
 		{
 			imageButtons.setIcon(ic_logo);
 		}
@@ -58,7 +72,9 @@ public class ButtonDataClass {
 	}
 
 	public void setVisible(boolean isVisible) {
-		if(isVisible == false)
+		
+		if(isMatched() != true) { // make sure this works correctly
+		if(isVisible == true)
 		{
 			imageButtons.setIcon(ic_logo);
 		}
@@ -67,6 +83,30 @@ public class ButtonDataClass {
 			imageButtons.setIcon(ic_logoQue);
 		}
 		this.isVisible = isVisible;
+	}}
+	
+	public void flipCards() {
+		if(flipCounter == 0 || flipCounter == 1 ) {
+			if(isVisible != true) {
+			flipCounter++;
+			setVisible(true);}
+		}
+	}
+	
+	public static void isMatchChecker(ButtonDataClass Obj1, ButtonDataClass Obj2) {
+		
+		if(Obj1.equals(Obj2))
+		{
+			Obj1.setMatched(true);
+			Obj1.setMatched(true);
+		}	
+	}
+	
+	public static void continueClicked() { // pass in an object so it knows which cards to flip back?
+		if(flipCounter == 2) {
+			flipCounter = 0;
+		} // think you can just set all of them to change but the ones that that are matched true won't
+		// this might have to be in the same place as the button
 	}
 
 	public JButton getImageButtons() {
@@ -88,5 +128,3 @@ public class ButtonDataClass {
 	}
 
 }
-// test equal if the image name is equal
-// don't need a to string or a compare
