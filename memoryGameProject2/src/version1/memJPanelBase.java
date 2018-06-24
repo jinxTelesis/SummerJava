@@ -45,10 +45,10 @@ public class memJPanelBase extends JPanel {
 		//jpUpper.setLayout(flowLayObj);
 		
 		//GridLayout GridLayObj = new GridLayout(6,6);
-		//GridLayout GridLayObj = new GridLayout(3,1);
-		BoxLayout boxlay = new BoxLayout(null, hGap);
+		GridLayout GridLayObj = new GridLayout(2,1);
+		//BoxLayout boxlay = new BoxLayout(null, hGap);
 		memJPanelMid jpMid = new memJPanelMid();
-		jpMid.setLayout(boxlay);
+		jpMid.setLayout(GridLayObj);
 		
 		//FlowLayout flowLayObj2 = new FlowLayout(0,105, 10);
 		//memJPanelBot jpBot = new memJPanelBot();

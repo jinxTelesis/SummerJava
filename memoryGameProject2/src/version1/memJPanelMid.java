@@ -41,14 +41,16 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	private int attempts = 0;
 	private int matches = 0;
 	private int score = 0;
+	private int avoidDoubleClick = -1;
+	
 	
 	private JLabel jlAttempts;
 	private JLabel jlMatchCou;
 	private JLabel jlScore;
 	// add in numbers to update in jpanel base
-	private String laAttemptStr = "Attempts : "; // need to base off number later
-	private String laMatchCouStr = "Matches Found : ";
-	private String laScoreStr = "Score : ";
+	private String laAttemptStr = "Attempts : " + attempts; 
+	private String laMatchCouStr = "Matches Found : "+ matches;
+	private String laScoreStr = "Score : " + score;
 	
 	/////////////////////////////////////////////
 	Border blackline, raisedetched, loweredetched,
@@ -58,6 +60,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	private JButton continueBut;
 	private JButton exitBut;
 	private JLabel spacer, spacer1, spacer2, spacer3, spacer4;
+	private JLabel upSpacer1, upSpacer2, upSpacer3;
 	private JPanel nestedJP1;
 	private JPanel nestedJP2;
 	private JPanel nestedJP3;
@@ -76,14 +79,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	
 	private boolean[] isMatched = new boolean[36]; //
 
-	
-	
-//	private ImageIcon[] ic_reg = new ImageIcon[36]; 
-//	private ImageIcon[] ic_logo = new ImageIcon[36];
-//	private JButton test1;
-//	private ImageIcon ic_regQue;
-//	private ImageIcon ic_logoQue;
-	
+
 	private JButton[] imageButtons;
 	private ButtonDataClass[] buttonsData = new ButtonDataClass[36];
 	private static Queue<Integer> lastClicked = new LinkedList<>();
@@ -103,30 +99,20 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		loweredbevel = BorderFactory.createLoweredBevelBorder();
 		empty = BorderFactory.createEmptyBorder();
 		
+		upSpacer1 = new JLabel(" ");
+		upSpacer2 = new JLabel(" ");
+		upSpacer3 = new JLabel(" ");
+		
 		nestedJP1 = new JPanel();
 		FlowLayout flowLayObj2 = new FlowLayout(0,105, 35);
-		GridLayout GridLayObj = new GridLayout(6,6);
+		GridLayout GridLayObj = new GridLayout(7,6);
 		FlowLayout flowLayObjforUpper = new FlowLayout(0,115, 10);
 		nestedJP2 = new JPanel();
-		nestedJP3 = new JPanel();
+		//nestedJP3 = new JPanel();
 		
-		add(nestedJP3);
-		add(nestedJP1);
-		add(nestedJP2);
-		
-		nestedJP3.setPreferredSize(new Dimension(1100,200));
-		nestedJP3.setLayout(flowLayObjforUpper);
-		nestedJP3.setBorder(blackline);
-		nestedJP2.setLayout(flowLayObj2);
-		nestedJP2.setBorder(raisedbevel);
-		nestedJP1.setLayout(GridLayObj);
-		
-		
-		
-		
-		jlAttempts = new JLabel(laAttemptStr + attempts);
-		jlMatchCou = new JLabel(laMatchCouStr + matches);
-		jlScore = new JLabel(laScoreStr + score);
+		jlAttempts = new JLabel("             " + laAttemptStr + attempts);
+		jlMatchCou = new JLabel("             " + laMatchCouStr + matches);
+		jlScore = new JLabel("              "+ laScoreStr + score);
 		
 		jlAttempts.setAlignmentX(LEFT_ALIGNMENT);
 		jlAttempts.setBorder(raisedetched);
@@ -137,9 +123,31 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		jlScore.setAlignmentX(RIGHT_ALIGNMENT);
 		jlScore.setBorder(raisedetched);
 		
-		nestedJP3.add(jlAttempts);
-		nestedJP3.add(jlMatchCou);
-		nestedJP3.add(jlScore);
+		
+		
+		//nestedJP3.setPreferredSize(new Dimension(1100,200));
+		//nestedJP3.setLayout(flowLayObjforUpper);
+		//nestedJP3.setBorder(blackline);
+		nestedJP2.setLayout(flowLayObj2);
+		nestedJP2.setBorder(raisedbevel);
+		nestedJP1.setLayout(GridLayObj);
+		
+		
+		nestedJP1.add(jlAttempts);
+		nestedJP1.add(jlMatchCou);
+		nestedJP1.add(upSpacer1);
+		nestedJP1.add(upSpacer3);
+		nestedJP1.add(upSpacer2);
+		nestedJP1.add(jlScore);
+		
+		//add(nestedJP3);
+		
+		add(nestedJP1);
+		add(nestedJP2);
+		
+		
+		
+		
 		
 		
 		
@@ -312,171 +320,98 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		
 		if(e.getActionCommand() == "Button0"){
 			
-			buttonsData[0].flipCards();
-			lastClicked.add(0);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
-			
-		}
+			buttonLogic(0);
+			}
+		
 		
 		if(e.getActionCommand() == "Button1"){
-			
-			buttonsData[1].flipCards();
-			lastClicked.add(1);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
-
+			buttonLogic(1);
 			
 		}
 		
 		if(e.getActionCommand() == "Button2"){
-
-			buttonsData[2].flipCards();
-			lastClicked.add(2);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
-			
+			buttonLogic(2);
 		}
 		
 		if(e.getActionCommand() == "Button3"){
-			buttonsData[3].flipCards();
-			lastClicked.add(3);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(3);
 		}
 		
 		if(e.getActionCommand() == "Button4"){
-			buttonsData[4].flipCards();
-			lastClicked.add(4);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(4);
 		}
 		
 		if(e.getActionCommand() == "Button5") {
-			buttonsData[5].flipCards();
-			lastClicked.add(5);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
-			
-			
+			buttonLogic(5);
 		}
 		if(e.getActionCommand() == "Button6"){
-			buttonsData[6].flipCards();
-			lastClicked.add(6);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(6);
 
 		}
 		
 		if(e.getActionCommand() == "Button7"){
-			buttonsData[7].flipCards();
-			lastClicked.add(7);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(7);
 			
 		}
 		
 		if(e.getActionCommand() == "Button8"){
-			buttonsData[8].flipCards();
-			lastClicked.add(8);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(8);
 			
 		}
 		
 		if(e.getActionCommand() == "Button9"){
-			buttonsData[9].flipCards();
-			lastClicked.add(9);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
-			
+			buttonLogic(9);
 		}
 		
 		if(e.getActionCommand() == "Button10"){
-			buttonsData[10].flipCards();
-			lastClicked.add(10);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(10);
 			
 		}
 		
 		if(e.getActionCommand() == "Button11") {
-			buttonsData[11].flipCards();
-			lastClicked.add(11);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(11);
 			
 		}
 		
 		if(e.getActionCommand() == "Button12"){
-			buttonsData[12].flipCards();
-			lastClicked.add(12);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(12);
 			
 		}
 		
 		if(e.getActionCommand() == "Button13"){
-			buttonsData[13].flipCards();
-			lastClicked.add(13);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);	
+			buttonLogic(13);
 			
 		}
 		
 		if(e.getActionCommand() == "Button14"){
-			buttonsData[14].flipCards();
-			lastClicked.add(14);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(14);
 		}
 		
 		if(e.getActionCommand() == "Button15"){
-			buttonsData[15].flipCards();
-			lastClicked.add(15);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(15);
 		}
 		
 		if(e.getActionCommand() == "Button16"){
-			buttonsData[16].flipCards();
-			lastClicked.add(16);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(16);
 		}
 		
 		if(e.getActionCommand() == "Button17") {
-			buttonsData[17].flipCards();
-			lastClicked.add(17);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(17);
 		}
 		if(e.getActionCommand() == "Button18"){
-			buttonsData[18].flipCards();
-			lastClicked.add(18);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(18);
 		}
 		
 		if(e.getActionCommand() == "Button19"){
-			buttonsData[19].flipCards();
-			lastClicked.add(19);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(19);
 		}
 		
 		if(e.getActionCommand() == "Button20"){
-			buttonsData[20].flipCards();
-			lastClicked.add(20);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(20);
 		}
 		
 		if(e.getActionCommand() == "Button21"){
-			buttonsData[21].flipCards();
-			lastClicked.add(21);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(21);
 		}
 		
 		if(e.getActionCommand() == "Button22"){
@@ -601,13 +536,14 @@ public class memJPanelMid extends JPanel implements ActionListener {
 				lastClicked.add(-2);
 				if(firPos != -2 && secPos != -2)
 				{
-					setAttempts(getAttempts() + 1);
+					attempts += 1;
+					jlAttempts.setText("             " + laAttemptStr + attempts);
 				}
 				
 				
 				ButtonDataClass.isMatchChecker(buttonsData,firPos,secPos);
-				System.out.println(buttonsData[firPos].isMatched());
-				System.out.println(buttonsData[secPos].isMatched());
+				//System.out.println(buttonsData[firPos].isMatched());
+				//System.out.println(buttonsData[secPos].isMatched());
 
 				System.out.println("event worked" + firPos + " " + secPos);
 				// the size of last clicked got bigger 
@@ -653,6 +589,20 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	
 
 
+	private void buttonLogic(int butClicked) {
+		int pollIt =0;
+		
+		if(avoidDoubleClick == butClicked) {}
+		else {
+		avoidDoubleClick = butClicked;
+		buttonsData[butClicked].flipCards();
+		lastClicked.add(butClicked);
+		pollIt = lastClicked.poll();
+		System.out.println(pollIt);
+		}
+		
+	}
+
 	// i rewrote this code from programcreek changed about 12 things but still their template
 	public static ImageIcon[] RandomizeArray(ImageIcon[] ic_logoarr){
 		Random rgen = new Random();  // Random number generator			
@@ -668,12 +618,6 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	}
 	// i rewrote this code from programcreek
 
-	public int getAttempts() {
-		return attempts;
-	}
-
-	public void setAttempts(int attempts) {
-		this.attempts = attempts;
-	}
+	
 
 }
