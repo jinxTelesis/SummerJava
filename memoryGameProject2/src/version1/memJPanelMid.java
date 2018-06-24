@@ -40,7 +40,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	
 	private int attempts = 0;
 	private int matches = 0;
-	private int score = 0;
+	private double score = 0;
 	private int avoidDoubleClick = -1;
 	
 	
@@ -507,10 +507,32 @@ public class memJPanelMid extends JPanel implements ActionListener {
 								matches = matches + 1;
 								laMatchCouStr = "             "  + "Matches Found : " + matches;
 								jlMatchCou.setText(laMatchCouStr);
+								
+								
 							}
 						}
 					}
 					
+					if(matches == 18)
+					{
+						System.out.println("you won");
+					}
+					
+				}
+				
+				if(matches == 0)
+				{
+					score = 0;
+				}
+				else if(matches > 0)
+				{
+					//jlScore = new JLabel("              "+ laScoreStr + score);
+					//private String laScoreStr = "Score : " + score;
+					score = ((double)matches/(double)attempts) * 100;
+					String temp = String.format( "%.2f", score);
+					
+					laScoreStr = "              " + "Score : " + temp;
+					jlScore.setText(laScoreStr);
 				}
 				
 				
