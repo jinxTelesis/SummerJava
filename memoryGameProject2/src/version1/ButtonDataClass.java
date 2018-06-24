@@ -15,6 +15,8 @@ public class ButtonDataClass {
 	private String ButtonName;
 	private static final String imageName = "images/qmark.jpg";
 	private String imageHandle; // string file name
+	
+
 	private ImageIcon ic_reg; // image
 	private ImageIcon ic_logo; // icon resize
 	private JButton imageButtons; // not sure if the class should store a JButton; we will see
@@ -22,8 +24,8 @@ public class ButtonDataClass {
 	private ImageIcon ic_logoQue;
 	private boolean isVisible;
 	private boolean isMatched;
-	static boolean[] isMatchedList = new boolean[36];
-	
+	static boolean[] isMatchedList = new boolean[36]; // not using yet
+	private int imageID = 0;
 	
 
 	public ButtonDataClass(String imageHandle) {
@@ -37,6 +39,22 @@ public class ButtonDataClass {
 		this.isVisible = false;
 		//this.imageButtons = new JButton(ic_logo);
 		this.imageButtons = new JButton(ic_logoQue);
+	}
+	
+	public int getImageID() {
+		return imageID;
+	}
+
+	public void setImageID(int imageID) {
+		this.imageID = imageID;
+	}
+	
+	public String getImageHandle() {
+		return imageHandle;
+	}
+
+	public void setImageHandle(String imageHandle) {
+		this.imageHandle = imageHandle;
 	}
 
 	public String getButtonName() {
@@ -93,13 +111,23 @@ public class ButtonDataClass {
 		}
 	}
 	
-	public static void isMatchChecker(ButtonDataClass Obj1, ButtonDataClass Obj2) {
+	// just pass in an array and a position and then you have a match G!!!
+	public static void isMatchChecker(ButtonDataClass[] Obj1, int pos1, int pos2) {
 		
-		if(Obj1.equals(Obj2))
+		if(pos1 != pos2)
 		{
-			Obj1.setMatched(true);
-			Obj1.setMatched(true);
-		}	
+		if(pos1 != -2 && pos2 != -2)
+		{
+		if(Obj1[pos1].equals(Obj1[pos2]))
+		{
+			Obj1[pos1].setMatched(true);
+			Obj1[pos2].setMatched(true);
+			System.out.println("Comparison worked!");
+		}
+		
+		}
+		}
+		
 	}
 	
 	public static void continueClicked() { // pass in an object so it knows which cards to flip back?
@@ -118,7 +146,7 @@ public class ButtonDataClass {
 		if(o instanceof ButtonDataClass)
 		{
 			ButtonDataClass OtherObj = (ButtonDataClass)o;
-			if(this.imageHandle.equals(OtherObj.imageHandle))
+			if(this.imageID == OtherObj.imageID) // hmm looks like it was done correctly
 			{
 				return true;
 			}

@@ -51,6 +51,8 @@ public class memJPanelUpper extends JPanel {
 		add(jlMatchCou);
 		add(jlScore);
 		
+		
+		
 	}
 
 }

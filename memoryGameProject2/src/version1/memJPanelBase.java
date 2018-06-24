@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -37,16 +38,17 @@ public class memJPanelBase extends JPanel {
 		loweredbevel = BorderFactory.createLoweredBevelBorder();
 		empty = BorderFactory.createEmptyBorder();
 		
-		FlowLayout flowLayObj = new FlowLayout(0,115, 10);
+		//FlowLayout flowLayObj = new FlowLayout(0,115, 10);
 		
-		memJPanelUpper jpUpper = new memJPanelUpper();
-		jpUpper.setBorder(blackline);
-		jpUpper.setLayout(flowLayObj);
+		//memJPanelUpper jpUpper = new memJPanelUpper();
+		//jpUpper.setBorder(blackline);
+		//jpUpper.setLayout(flowLayObj);
 		
 		//GridLayout GridLayObj = new GridLayout(6,6);
-		GridLayout GridLayObj = new GridLayout(2,1);
+		//GridLayout GridLayObj = new GridLayout(3,1);
+		BoxLayout boxlay = new BoxLayout(null, hGap);
 		memJPanelMid jpMid = new memJPanelMid();
-		jpMid.setLayout(GridLayObj);
+		jpMid.setLayout(boxlay);
 		
 		//FlowLayout flowLayObj2 = new FlowLayout(0,105, 10);
 		//memJPanelBot jpBot = new memJPanelBot();
@@ -59,7 +61,7 @@ public class memJPanelBase extends JPanel {
 		
 		
 		
-		add(jpUpper);
+		//add(jpUpper);
 		add(jpMid);
 		//add(jpBot);
 		
