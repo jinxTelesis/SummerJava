@@ -496,10 +496,25 @@ public class memJPanelMid extends JPanel implements ActionListener {
 				{
 					attempts += 1;
 					jlAttempts.setText("             " + laAttemptStr + attempts);
+					ButtonDataClass.isMatchChecker(buttonsData,firPos,secPos);
+					
+					if(firPos != secPos)
+					{
+						if(buttonsData[firPos].isMatched())
+						{
+							if(buttonsData[secPos].isMatched())
+							{
+								matches = matches + 1;
+								laMatchCouStr = "             "  + "Matches Found : " + matches;
+								jlMatchCou.setText(laMatchCouStr);
+							}
+						}
+					}
+					
 				}
 				
 				
-				ButtonDataClass.isMatchChecker(buttonsData,firPos,secPos);
+				//ButtonDataClass.isMatchChecker(buttonsData,firPos,secPos);
 				//System.out.println(buttonsData[firPos].isMatched());
 				//System.out.println(buttonsData[secPos].isMatched());
 
