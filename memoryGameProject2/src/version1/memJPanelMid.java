@@ -415,101 +415,59 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		}
 		
 		if(e.getActionCommand() == "Button22"){
-			buttonsData[22].flipCards();
-			lastClicked.add(22);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(22);
 		}
 		
 		if(e.getActionCommand() == "Button23") {
-			buttonsData[23].flipCards();
-			lastClicked.add(23);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(23);
 		}
 		
 		if(e.getActionCommand() == "Button24"){
-			buttonsData[24].flipCards();
-			lastClicked.add(24);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(24);
 		}
 		
 		if(e.getActionCommand() == "Button25"){
-			buttonsData[25].flipCards();
-			lastClicked.add(25);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(25);
 		}
 		
 		if(e.getActionCommand() == "Button26"){
-			buttonsData[26].flipCards();
-			lastClicked.add(26);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(26);
 		}
 		
 		if(e.getActionCommand() == "Button27") {
-			buttonsData[27].flipCards();
-			lastClicked.add(27);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(27);
 		}
 		if(e.getActionCommand() == "Button28"){
-			buttonsData[28].flipCards();
-			lastClicked.add(28);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(28);
 		}
 		
 		if(e.getActionCommand() == "Button29"){
-			buttonsData[29].flipCards();
-			lastClicked.add(29);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(29);
 		}
 		
 		if(e.getActionCommand() == "Button30"){
-			buttonsData[30].flipCards();
-			lastClicked.add(30);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(30);
 		}
 		
 		if(e.getActionCommand() == "Button31"){
-			buttonsData[31].flipCards();
-			lastClicked.add(31);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(31);
 			
 		}
 		
 		if(e.getActionCommand() == "Button32"){
-			buttonsData[32].flipCards();
-			lastClicked.add(32);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(32);
 		}
 		
 		if(e.getActionCommand() == "Button33") {
-			buttonsData[33].flipCards();
-			lastClicked.add(33);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(33);
 		}
 		
 		if(e.getActionCommand() == "Button34"){
-			buttonsData[34].flipCards();
-			lastClicked.add(34);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(34);
 		}
 		
 		if(e.getActionCommand() == "Button35"){
-			buttonsData[35].flipCards();
-			lastClicked.add(35);
-			pollIt = lastClicked.poll();
-			System.out.println(pollIt);
+			buttonLogic(35);
 		}
 
 		
