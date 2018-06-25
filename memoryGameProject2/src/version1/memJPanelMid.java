@@ -7,7 +7,10 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Random;
+import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -91,6 +94,14 @@ public class memJPanelMid extends JPanel implements ActionListener {
 			lastClicked.add(-2);
 		}
 		
+		try {
+			readFile();
+		} catch (FileNotFoundException e) {
+			System.out.println("Creating a top player file none found ");
+		} finally {
+			
+		}
+		
 		
 		blackline = BorderFactory.createLineBorder(Color.black);
 		raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED);
@@ -123,11 +134,6 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		jlScore.setAlignmentX(RIGHT_ALIGNMENT);
 		jlScore.setBorder(raisedetched);
 		
-		
-		
-		//nestedJP3.setPreferredSize(new Dimension(1100,200));
-		//nestedJP3.setLayout(flowLayObjforUpper);
-		//nestedJP3.setBorder(blackline);
 		nestedJP2.setLayout(flowLayObj2);
 		nestedJP2.setBorder(raisedbevel);
 		nestedJP1.setLayout(GridLayObj);
@@ -144,13 +150,6 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		
 		add(nestedJP1);
 		add(nestedJP2);
-		
-		
-		
-		
-		
-		
-		
 		
 		for(int i = 0; i < 36; i++) // hmm worked
 		{
@@ -633,6 +632,30 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		return ic_logoarr;
 	}
 	// i rewrote this code from programcreek
+	
+	public String readFile(String fileName) {
+		String text = "";
+		Scanner inStream = null;
+		
+		try {
+			inStream = new Scanner(new File(fileName));
+			int lineNum = 0;
+			while(inStream.hasNextLine()) {
+				text += inStream.nextLine();
+			}
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+			System.err.println("Check permissionsand file name + path "
+			+ e.getMessage());
+		}
+		finally {
+			if(inStream !=null) {
+				inStream.close();
+			}
+			
+		}
+		return text;
+	}
 
 	
 

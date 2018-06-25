@@ -13,6 +13,8 @@ public class Driver {
 		
 		javax.swing.SwingUtilities.invokeLater(new Runnable()
 		{
+			
+			
 			public void run()
 			{
 				memJFrame frame = new memJFrame();
