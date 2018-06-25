@@ -566,15 +566,43 @@ public class memJPanelMid extends JPanel implements ActionListener {
 								}
 							}
 							
-							// might have to put try catch
+							// put exit and score dialog box here
+							if(score > 97)
+							{
+								//Amazing
+								JOptionPane.showMessageDialog(null, "BTW you did Amazing!!! Congrats");
+								System.exit(0);
+							}
+							else if(score > 80)
+							{
+								// Excellent
+								JOptionPane.showMessageDialog(null, "BTW you did Excellent!!! Congrats");
+							}
+							else if(score > 60)
+							{
+								// OK
+								JOptionPane.showMessageDialog(null, "BTW you did OK! Better luck next time");
+							}
+							else if(score > 30)
+							{
+								JOptionPane.showMessageDialog(null, "Your score was okay! Better luck next time");
+							}
+							else if(score > 10)
+							{
+								//suffering
+							}
+							else if(score >= 0)
+							{
+								//Mind has escaped
+							}
 							
 						}
 						else 
 						{
+							
 							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score));
-//							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
-//									"\n Enter your name ");
-							//JOptionPane.showInternalMessageDialog(frame.getContentPane(), "blah blahblah blah");
+							JOptionPane.showMessageDialog(null, "The leader is " + tempScore + "with "  + score + "points ");
+
 						}
 						
 //						String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
