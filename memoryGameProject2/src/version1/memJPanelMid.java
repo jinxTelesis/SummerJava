@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
@@ -101,7 +102,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 			System.out.println("Creating a top player file none found ");
 		} finally {
 			// create images/topscore.txt
-			writeToNewFile("images/topscore.txt", "0/nNobody/n");
+			writeToNewFile("images/topscore.txt", "0", "Nobody");
 		}
 		
 		
@@ -483,10 +484,6 @@ public class memJPanelMid extends JPanel implements ActionListener {
 			case CONTINUE:
 				// card one is mistakenly set to true somewhere
 				
-				
-				
-				
-				
 				ButtonDataClass.continueClicked();
 				System.out.println("this is lastClicked size" + lastClicked.size());
 				firPos =lastClicked.poll();
@@ -517,42 +514,76 @@ public class memJPanelMid extends JPanel implements ActionListener {
 					if(matches == 2) // reset to 18 after 
 					{ //"images/topScore.txt"
 						Scanner inStream = null;
+						String tempScore = "";
+						String tempName = "";
 						
-//						try {
-//							inStream = new Scanner(new File(fileName));
-//							int lineNum = 0;
-//							while(inStream.hasNextLine()) {
-//								text += inStream.nextLine();
-//							}
-//						} catch(FileNotFoundException e) {
-//							
-//							e.printStackTrace();
-//							System.err.println("Check permissionsand file name + path "
-//							+ e.getMessage());
-//							throw e;
+						try 
+						{
+							inStream = new Scanner(new File("images/topScore.txt"));
+							tempScore = inStream.nextLine();
+							tempName = inStream.nextLine();
+							System.out.println("this is temp score read from file " + tempScore);
+							System.out.println("this is tempName read from a file " + tempName);
+						}
+						catch(FileNotFoundException e3)
+						{
+							
+							e3.printStackTrace();
+							System.err.println("Check permissionsand file name + path "
+							+ e3.getMessage());
+						}
 						
+						int highScore = Integer.valueOf(tempScore);
+						System.out.println(highScore);
 						
-						int highScore =150;
 						JFrame frame = new JFrame();
 						score = ((double)matches/(double)attempts) * 100;
 						if (highScore < score)
 						{
-							System.out.println("prompt user for new score");
-						}
-						else {
+							tempScore = Double.toString(score);
+							PrintWriter outStream = null;
 							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
 									"\n Enter your name ");
+							JOptionPane.showMessageDialog(null, "You are the new leader! with " + score);
+							
+							try {
+								
+								if(test1 == null)
+								{
+									test1 = tempName;
+								}
+								
+								FileOutputStream fOut = new FileOutputStream("images/topScore.txt", false);
+								outStream = new PrintWriter(fOut);
+								outStream.println(tempScore); // add
+								outStream.println(test1);
+							} catch (FileNotFoundException ERRorevent) {
+								
+							}
+							finally {
+								if(outStream != null) {
+									outStream.close();
+								}
+							}
+							
+							// might have to put try catch
+							
+						}
+						else 
+						{
+							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score));
+//							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
+//									"\n Enter your name ");
 							//JOptionPane.showInternalMessageDialog(frame.getContentPane(), "blah blahblah blah");
 						}
 						
-						String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
-								"\n Enter your name ");
-						if (highScore < score)
-						{
-							JOptionPane.showInputDialog(" The record holder is " + "Name Variable " + " with: " + highScore + " points ");
-						}
-						
-						
+//						String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
+//								"\n Enter your name ");
+//						if (highScore < score)
+//						{
+//							JOptionPane.showInputDialog(" The record holder is " + "Name Variable " + " with: " + highScore + " points ");
+//						}
+					
 						
 					}
 					
@@ -573,10 +604,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 					jlScore.setText(laScoreStr);
 				}
 				
-				
-				//ButtonDataClass.isMatchChecker(buttonsData,firPos,secPos);
-				//System.out.println(buttonsData[firPos].isMatched());
-				//System.out.println(buttonsData[secPos].isMatched());
+		
 
 				System.out.println("event worked" + firPos + " " + secPos);
 				// the size of last clicked got bigger 
@@ -678,11 +706,12 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		return text;
 	}
 
-	public void writeToNewFile(String fileName, String text) {
+	public void writeToNewFile(String fileName, String text1, String text2) {
 		PrintWriter outStream = null;
 		try {
 			outStream = new PrintWriter(fileName);//create&connect to file
-			outStream.println(text);//write 1 line to the file
+			outStream.println(text1);//write 1 line to the file
+			outStream.println(text2);
 		} catch (FileNotFoundException e) {
 			//e.printStackTrace();
 			System.out.println("Check your permissions and path or file name. Exception "+e.getMessage());
