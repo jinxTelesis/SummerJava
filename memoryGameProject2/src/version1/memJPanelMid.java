@@ -513,9 +513,30 @@ public class memJPanelMid extends JPanel implements ActionListener {
 						}
 					}
 					
-					if(matches == 18)
+					if(matches == 2) // reset to 18 after 
 					{
-						System.out.println("you won");
+						int highScore =150;
+						JFrame frame = new JFrame();
+						score = ((double)matches/(double)attempts) * 100;
+						if (highScore < score)
+						{
+							System.out.println("prompt user for new score");
+						}
+						else {
+							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
+									"\n Enter your name ");
+							//JOptionPane.showInternalMessageDialog(frame.getContentPane(), "blah blahblah blah");
+						}
+						
+						String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
+								"\n Enter your name ");
+						if (highScore < score)
+						{
+							JOptionPane.showInputDialog(" The record holder is " + "Name Variable " + " with: " + highScore + " points ");
+						}
+						
+						
+						
 					}
 					
 				}
