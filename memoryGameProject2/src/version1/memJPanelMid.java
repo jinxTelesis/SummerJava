@@ -48,6 +48,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	private double score = 0;
 	private int avoidDoubleClick = -1;
 	private int avoidTripleCLick = -1;
+	private int flipCounter = 0;
 	
 	
 	private JLabel jlAttempts;
@@ -89,6 +90,9 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	private JButton[] imageButtons;
 	private ButtonDataClass[] buttonsData = new ButtonDataClass[36];
 	private static Queue<Integer> lastClicked = new LinkedList<>();
+	
+	
+	
 	
 	public memJPanelMid() {//C:\Users\dremo\eclipse-workspace
 		if(lastClicked.size() < 2)
@@ -166,6 +170,10 @@ public class memJPanelMid extends JPanel implements ActionListener {
 				buttonsData[i].setImageID(i - 18);
 			}
 		}
+		
+		//buttonsData = RandomizeArray(buttonsData);
+		
+		
 		
 //		for(int i = 0; i < 36; i++) {
 //			System.out.println("image name " + buttonsData[i].getImageHandle());
@@ -306,169 +314,296 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	@Override // should do enumerations for this easier than // could save last object clicked
 	public void actionPerformed(ActionEvent e) {
 		int pollIt =0;
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
-		// check by iterating over both values in a parelle array of sorts
 		
 		if(e.getActionCommand() == "Button0"){
 			
-			buttonLogic(0);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(0);
 			}
+			
+		}
 		
 		
 		if(e.getActionCommand() == "Button1"){
-			buttonLogic(1);
+			
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(1);
+			}
 			
 		}
 		
 		if(e.getActionCommand() == "Button2"){
-			buttonLogic(2);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(2);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button3"){
-			buttonLogic(3);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(3);
+			}
 		}
 		
 		if(e.getActionCommand() == "Button4"){
-			buttonLogic(4);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(4);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button5") {
-			buttonLogic(5);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(5);
+			}
+			
 		}
 		if(e.getActionCommand() == "Button6"){
-			buttonLogic(6);
-
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(6);
+			}
 		}
 		
 		if(e.getActionCommand() == "Button7"){
-			buttonLogic(7);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(7);
+			}
+			
 			
 		}
 		
 		if(e.getActionCommand() == "Button8"){
-			buttonLogic(8);
-			
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(8);
+			}
 		}
 		
 		if(e.getActionCommand() == "Button9"){
-			buttonLogic(9);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(9);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button10"){
-			buttonLogic(10);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(10);
+			}
+			
 			
 		}
 		
 		if(e.getActionCommand() == "Button11") {
-			buttonLogic(11);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(11);
+			}
+			
 			
 		}
 		
 		if(e.getActionCommand() == "Button12"){
-			buttonLogic(12);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(12);
+			}
+			
 			
 		}
 		
 		if(e.getActionCommand() == "Button13"){
-			buttonLogic(13);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(13);
+			}
+			
 			
 		}
 		
 		if(e.getActionCommand() == "Button14"){
-			buttonLogic(14);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(14);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button15"){
-			buttonLogic(15);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(15);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button16"){
-			buttonLogic(16);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(16);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button17") {
-			buttonLogic(17);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(17);
+			}
+			
 		}
 		if(e.getActionCommand() == "Button18"){
-			buttonLogic(18);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(18);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button19"){
-			buttonLogic(19);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(19);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button20"){
-			buttonLogic(20);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(20);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button21"){
-			buttonLogic(21);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(21);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button22"){
-			buttonLogic(22);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(22);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button23") {
-			buttonLogic(23);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(23);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button24"){
-			buttonLogic(24);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(24);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button25"){
-			buttonLogic(25);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(25);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button26"){
-			buttonLogic(26);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(26);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button27") {
-			buttonLogic(27);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(27);
+			}
+			
 		}
 		if(e.getActionCommand() == "Button28"){
-			buttonLogic(28);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(28);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button29"){
-			buttonLogic(29);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(29);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button30"){
-			buttonLogic(30);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(30);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button31"){
-			buttonLogic(31);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(31);
+			}
+			
 			
 		}
 		
 		if(e.getActionCommand() == "Button32"){
-			buttonLogic(32);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(32);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button33") {
-			buttonLogic(33);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(33);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button34"){
-			buttonLogic(34);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(34);
+			}
+			
 		}
 		
 		if(e.getActionCommand() == "Button35"){
-			buttonLogic(35);
+			if(ButtonDataClass.getFlipCounter() == 0 || ButtonDataClass.getFlipCounter() == 1 )
+			{
+				buttonLogic(35);
+			}
+			
 		}
 
 		
@@ -510,7 +645,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 						}
 					}
 					
-					if(matches == 2) // reset to 18 after 
+					if(matches == 5) // reset to 18 after 
 					{ //"images/topScore.txt"
 						Scanner inStream = null;
 						String tempScore = "";
@@ -604,8 +739,8 @@ public class memJPanelMid extends JPanel implements ActionListener {
 						else 
 						{
 							
-							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score));
-							JOptionPane.showMessageDialog(null, "The leader is " + String.format("%.2f", tempName) + " with "  + score + "points ");
+							JOptionPane.showMessageDialog(null,"Game over! Your score was : " + String.format( "%.2f", score));
+							JOptionPane.showMessageDialog(null, "The leader is " + tempName + " with "  + highScore + "points ");
 							
 							if(score > 97)
 							{
@@ -661,8 +796,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 				}
 				else if(matches > 0)
 				{
-					//jlScore = new JLabel("              "+ laScoreStr + score);
-					//private String laScoreStr = "Score : " + score;
+					
 					score = ((double)matches/(double)attempts) * 100;
 					String temp = String.format( "%.2f", score);
 					
@@ -684,6 +818,8 @@ public class memJPanelMid extends JPanel implements ActionListener {
 				break;
 				
 			case EXIT:
+				
+				score = ((double)matches/(double)attempts) * 100;
 
 				javax.swing.SwingUtilities.invokeLater(new Runnable()
 				{
@@ -698,6 +834,40 @@ public class memJPanelMid extends JPanel implements ActionListener {
 						add(joption);
 						if(dialogResult == JOptionPane.YES_OPTION)
 						{
+							JOptionPane.showMessageDialog(null, "Your score was " + score);
+							if(score > 97)
+							{
+								//Amazing
+								JOptionPane.showMessageDialog(null, "BTW you did Amazing!!! Congrats");
+								System.exit(0);
+							}
+							else if(score > 80)
+							{
+								// Excellent
+								JOptionPane.showMessageDialog(null, "BTW you did Excellent!!! Congrats");
+								System.exit(0);
+							}
+							else if(score > 60)
+							{
+								// OK
+								JOptionPane.showMessageDialog(null, "BTW you did OK! Better luck next time");
+								System.exit(0);
+							}
+							else if(score > 30)
+							{
+								JOptionPane.showMessageDialog(null, "Your score was okay! Better luck next time");
+								System.exit(0);
+							}
+							else if(score > 10)
+							{
+								JOptionPane.showMessageDialog(null, "Your memory is suffering! Maybe you should get checked out");
+								System.exit(0);
+							}
+							else if(score >= 0)
+							{
+								JOptionPane.showMessageDialog(null, "Your mind has escaped you, uhh yeah.");
+								System.exit(0);
+							}
 							System.exit(0);
 						}
 						else if(dialogResult == JOptionPane.NO_OPTION)
@@ -731,12 +901,12 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	}
 
 	// i rewrote this code from programcreek changed about 12 things but still their template
-	public static ImageIcon[] RandomizeArray(ImageIcon[] ic_logoarr){
+	public static ButtonDataClass[] RandomizeArray(ButtonDataClass[] ic_logoarr){
 		Random rgen = new Random();  // Random number generator			
  
 		for (int i=0; i<ic_logoarr.length; i++) {
 		    int randomPosition = rgen.nextInt(ic_logoarr.length);
-		    ImageIcon ic_logoTemp = ic_logoarr[i];
+		    ButtonDataClass ic_logoTemp = ic_logoarr[i];
 		    ic_logoarr[i] = ic_logoarr[randomPosition];
 		    ic_logoarr[randomPosition] = ic_logoTemp;
 		}

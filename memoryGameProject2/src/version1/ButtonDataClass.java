@@ -11,6 +11,9 @@ public class ButtonDataClass {
 	
 	// think easiest solution is static list for each
 	private static int flipCounter=0;
+	
+	
+
 	private static int ButtonNameInc;
 	private String ButtonName;
 	private static final String imageName = "images/qmark.jpg";
@@ -55,6 +58,10 @@ public class ButtonDataClass {
 		this.isVisible = false;
 		//this.imageButtons = new JButton(ic_logo);
 		this.imageButtons = new JButton(ic_logoQue);
+	}
+	
+	public static int getFlipCounter() {
+		return flipCounter;
 	}
 	
 	public int getImageID() {
