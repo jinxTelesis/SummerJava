@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -95,11 +96,12 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		}
 		
 		try {
-			readFile();
+			readFile("images/topScore.txt");
 		} catch (FileNotFoundException e) {
 			System.out.println("Creating a top player file none found ");
 		} finally {
-			
+			// create images/topscore.txt
+			writeToNewFile("images/topscore.txt", "0/nNobody/n");
 		}
 		
 		
@@ -513,7 +515,23 @@ public class memJPanelMid extends JPanel implements ActionListener {
 					}
 					
 					if(matches == 2) // reset to 18 after 
-					{
+					{ //"images/topScore.txt"
+						Scanner inStream = null;
+						
+//						try {
+//							inStream = new Scanner(new File(fileName));
+//							int lineNum = 0;
+//							while(inStream.hasNextLine()) {
+//								text += inStream.nextLine();
+//							}
+//						} catch(FileNotFoundException e) {
+//							
+//							e.printStackTrace();
+//							System.err.println("Check permissionsand file name + path "
+//							+ e.getMessage());
+//							throw e;
+						
+						
 						int highScore =150;
 						JFrame frame = new JFrame();
 						score = ((double)matches/(double)attempts) * 100;
@@ -633,7 +651,8 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	}
 	// i rewrote this code from programcreek
 	
-	public String readFile(String fileName) {
+	// this is your file handler you wrote in class, although ive written at least 100 in other languages
+	public String readFile(String fileName) throws FileNotFoundException{
 		String text = "";
 		Scanner inStream = null;
 		
@@ -644,9 +663,11 @@ public class memJPanelMid extends JPanel implements ActionListener {
 				text += inStream.nextLine();
 			}
 		} catch(FileNotFoundException e) {
+			
 			e.printStackTrace();
 			System.err.println("Check permissionsand file name + path "
 			+ e.getMessage());
+			throw e;
 		}
 		finally {
 			if(inStream !=null) {
@@ -657,6 +678,22 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		return text;
 	}
 
+	public void writeToNewFile(String fileName, String text) {
+		PrintWriter outStream = null;
+		try {
+			outStream = new PrintWriter(fileName);//create&connect to file
+			outStream.println(text);//write 1 line to the file
+		} catch (FileNotFoundException e) {
+			//e.printStackTrace();
+			System.out.println("Check your permissions and path or file name. Exception "+e.getMessage());
+		}
+		finally{
+			if(outStream!=null){
+				outStream.close();
+				System.out.println("ALL DONE");
+			}
+		}
+	}
 	
 
 }
