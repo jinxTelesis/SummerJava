@@ -15,6 +15,7 @@ public class ButtonDataClass {
 	private String ButtonName;
 	private static final String imageName = "images/qmark.jpg";
 	private String imageHandle; // string file name
+	private String path;
 	
 
 	private ImageIcon ic_reg; // image
@@ -29,7 +30,22 @@ public class ButtonDataClass {
 	
 
 	public ButtonDataClass(String imageHandle) {
+		this.path = null;
 		ButtonNameInc++;
+		this.ButtonName = "Button" + Integer.toString(ButtonNameInc);
+		this.imageHandle = imageHandle;
+		this.ic_reg = new ImageIcon(imageHandle);
+		this.ic_logo = new ImageIcon(((Image) ic_reg.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
+		this.ic_regQue = new ImageIcon(imageName);
+		this.ic_logoQue = new ImageIcon(((Image) ic_regQue.getImage()).getScaledInstance(100, 100, Image.SCALE_FAST));
+		this.isVisible = false;
+		//this.imageButtons = new JButton(ic_logo);
+		this.imageButtons = new JButton(ic_logoQue);
+	}
+	
+	public ButtonDataClass(String path, String imageHandle) {
+		ButtonNameInc++;
+		this.path = path;
 		this.ButtonName = "Button" + Integer.toString(ButtonNameInc);
 		this.imageHandle = imageHandle;
 		this.ic_reg = new ImageIcon(imageHandle);
