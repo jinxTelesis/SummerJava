@@ -47,15 +47,16 @@ public class memJPanelMid extends JPanel implements ActionListener {
 	private int matches = 0;
 	private double score = 0;
 	private int avoidDoubleClick = -1;
+	private int avoidTripleCLick = -1;
 	
 	
 	private JLabel jlAttempts;
 	private JLabel jlMatchCou;
 	private JLabel jlScore;
 	// add in numbers to update in jpanel base
-	private String laAttemptStr = "Attempts : " + attempts; 
-	private String laMatchCouStr = "Matches Found : "+ matches;
-	private String laScoreStr = "Score : " + score;
+	private String laAttemptStr = "Attempts : "; 
+	private String laMatchCouStr = "Matches Found : ";
+	private String laScoreStr = "Score : ";
 	
 	/////////////////////////////////////////////
 	Border blackline, raisedetched, loweredetched,
@@ -96,15 +97,13 @@ public class memJPanelMid extends JPanel implements ActionListener {
 			lastClicked.add(-2);
 		}
 		
-		try {
-			readFile("images/topScore.txt");
-		} catch (FileNotFoundException e) {
-			System.out.println("Creating a top player file none found ");
-		} finally {
-			// create images/topscore.txt
-			writeToNewFile("images/topscore.txt", "0", "Nobody");
-		}
-		
+//		try {
+//			readFile("images/topScore.txt");
+//		} catch (FileNotFoundException e) {
+//			System.out.println("Creating a top player file none found ");
+//			writeToNewFile("images/topscore.txt", "0", "Nobody");
+//		} 
+//		
 		
 		blackline = BorderFactory.createLineBorder(Color.black);
 		raisedetched = BorderFactory.createEtchedBorder(EtchedBorder.RAISED);
@@ -544,7 +543,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 							PrintWriter outStream = null;
 							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score) + 
 									"\n Enter your name ");
-							JOptionPane.showMessageDialog(null, "You are the new leader! with " + score);
+							JOptionPane.showMessageDialog(null, "You are the new leader! with " + String.format( "%.2f", score) + "points");
 							
 							try {
 								
@@ -606,7 +605,41 @@ public class memJPanelMid extends JPanel implements ActionListener {
 						{
 							
 							String test1= JOptionPane.showInputDialog("Game over! Your score was : " + String.format( "%.2f", score));
-							JOptionPane.showMessageDialog(null, "The leader is " + tempScore + "with "  + score + "points ");
+							JOptionPane.showMessageDialog(null, "The leader is " + String.format("%.2f", tempName) + " with "  + score + "points ");
+							
+							if(score > 97)
+							{
+								//Amazing
+								JOptionPane.showMessageDialog(null, "BTW you did Amazing!!! Congrats");
+								System.exit(0);
+							}
+							else if(score > 80)
+							{
+								// Excellent
+								JOptionPane.showMessageDialog(null, "BTW you did Excellent!!! Congrats");
+								System.exit(0);
+							}
+							else if(score > 60)
+							{
+								// OK
+								JOptionPane.showMessageDialog(null, "BTW you did OK! Better luck next time");
+								System.exit(0);
+							}
+							else if(score > 30)
+							{
+								JOptionPane.showMessageDialog(null, "Your score was okay! Better luck next time");
+								System.exit(0);
+							}
+							else if(score > 10)
+							{
+								JOptionPane.showMessageDialog(null, "Your memory is suffering! Maybe you should get checked out");
+								System.exit(0);
+							}
+							else if(score >= 0)
+							{
+								JOptionPane.showMessageDialog(null, "Your mind has escaped you, uhh yeah.");
+								System.exit(0);
+							}
 
 						}
 						
