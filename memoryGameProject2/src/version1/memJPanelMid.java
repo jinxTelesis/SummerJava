@@ -577,23 +577,28 @@ public class memJPanelMid extends JPanel implements ActionListener {
 							{
 								// Excellent
 								JOptionPane.showMessageDialog(null, "BTW you did Excellent!!! Congrats");
+								System.exit(0);
 							}
 							else if(score > 60)
 							{
 								// OK
 								JOptionPane.showMessageDialog(null, "BTW you did OK! Better luck next time");
+								System.exit(0);
 							}
 							else if(score > 30)
 							{
 								JOptionPane.showMessageDialog(null, "Your score was okay! Better luck next time");
+								System.exit(0);
 							}
 							else if(score > 10)
 							{
-								//suffering
+								JOptionPane.showMessageDialog(null, "Your memory is suffering! Maybe you should get checked out");
+								System.exit(0);
 							}
 							else if(score >= 0)
 							{
-								//Mind has escaped
+								JOptionPane.showMessageDialog(null, "Your mind has escaped you, uhh yeah.");
+								System.exit(0);
 							}
 							
 						}
