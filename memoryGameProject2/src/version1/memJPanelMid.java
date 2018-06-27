@@ -160,7 +160,7 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		for(int i = 0; i < 36; i++) // hmm worked
 		{
 			buttonsData[i] = new ButtonDataClass("images/image" + Integer.toString(i) + ".jpg");
-			buttonsData[i].setImageHandle("images/image" + Integer.toString(i) + ".jpg");
+			buttonsData[i].setImageHandle("images/image" + i + ".jpg");
 			if(i >= 0 && i < 18)
 			{
 				buttonsData[i].setImageID(i);
@@ -172,6 +172,8 @@ public class memJPanelMid extends JPanel implements ActionListener {
 		}
 		
 		//buttonsData = RandomizeArray(buttonsData);
+		
+		
 		
 		
 		
