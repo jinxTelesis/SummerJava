@@ -7,8 +7,10 @@ public class Test1 {
 		
 		printArray(array1);
 		
+		MergeSort mergeObj = new MergeSort();
+		mergeObj.sort(array1, 0, array1.length-1);
 		
-
+		printArray(array1);
 	}
 	
 	static void printArray(int arr[])
@@ -20,8 +22,6 @@ public class Test1 {
 			
 		}
 		System.out.println();
-		
-		
 	}
 
 }
