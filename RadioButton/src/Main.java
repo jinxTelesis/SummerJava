@@ -17,9 +17,31 @@ public class Main {
 			System.out.printf("%.4f%n", minValue);
 		}
 		
-		System.out.println("minimum value: " + findMinimum2(new int[] {3, 5, 2, 8, 6}));
+		//System.out.println("minimum value: " + findMinimum2(new int[] {3, 5, 2, 8, 6}));
+		//System.out.println("min value: " + findMinimum2(new int[] { 3, 8, 14, 18, 56}));
 		
-	}
+		double[][] matrix = new double[3][];
+		
+		for(int i = 0; i < matrix.length; i++)
+		{
+			matrix[i] = new double [i + 1];
+		}
+		
+		double[][] matrix2 = {
+				{0.0},
+				{0.0, 0.0},
+				{0.0, 0.0, 0.0}
+		};
+		
+		double[][] matrix3 = new double[][] { // annoymous array to be an expression
+			{0.0},
+			{0.0, 0.0},
+			{0.0, 0.0, 0.0}
+		};
+		}
+		
+		
+		
 	
 	public static int findMinimum2(int[] dataSeq){
 		int min = dataSeq[0];
