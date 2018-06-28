@@ -1,5 +1,5 @@
 
-public class TubeLight extends Light {
+final public class TubeLight extends Light {
 	
 	// Field
 	int tubeLength;
