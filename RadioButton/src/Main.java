@@ -2,13 +2,51 @@ import javax.swing.JFrame;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String args)
+	{
+		double[] storeMinimum = new double[5];
+		double[] trailArray = new double[5];
 		
-		Gui go = new Gui();
-		go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		go.setSize(300,200);
-		go.setVisible(true);
-
+		for(int i =0; i < storeMinimum.length; i++)
+		{
+			randu(trailArray);
+			storeMinimum[i] = findMinimum(trailArray);
+		}
+		
+		for (double minValue :storeMinimum) {
+			System.out.printf("%.4f%n", minValue);
+		}
+		
+		System.out.println("minimum value: " + findMinimum2(new int[] {3, 5, 2, 8, 6}));
+		
+	}
+	
+	public static int findMinimum2(int[] dataSeq){
+		int min = dataSeq[0];
+		
+		for(int index = 1; index < dataSeq.length; index++)
+			if(dataSeq[index] < min)
+				min = dataSeq[index];
+		return min;
+	}
+	
+	public static void randu(double[] valArray)
+	{
+		for (int i = 0; i < valArray.length; ++i)
+		{
+			valArray[i] = Math.random() * 100.0;
+		}
+	}
+	
+	public static double findMinimum(double[] trailArray) {
+		
+		double minValue = trailArray[0]; // starts at one because minvalue set to element zero
+		for(int i = 1; i < trailArray.length; i++)
+		{
+			minValue = Math.min(minValue, trailArray[i]);
+		}
+		
+		return minValue;
 	}
 
 }
