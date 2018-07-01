@@ -12,7 +12,6 @@ public class Main {
 		// Continue with update expression in the loop header
 		}
 		
-		
 		int[][] squareMatrix = {{4,3,5},{2,1,6},{9,7,8}};
 		int sum =0;
 		outer: for (int i =0; i < squareMatrix.length;i++) {
@@ -27,7 +26,30 @@ public class Main {
 		}
 		System.out.println(("Sum: " + sum));
 		
+		
+		
+		
+		
+		
+		
 	}
+	
+	public static void printAverage(int totalSum, int totalNumber) 
+		throws IntegerDivisionByZero{
+			int average = computerAverage(totalSum, totalNumber);
+			System.out.println("Average = " + totalSum + " / " + totalNumber + " = " +average);
+			System.out.println("Exit printAvreage().");
+		}
+	
+	public static int computeAverage(int sum, int number) 
+		throws IntegerDivisionByZero{
+			System.out.println("Computing average.");
+		if (number == 0)
+			throw new IntegerDivisionByZero("Integer Division By zero");
+		return sum/number;
+		}
+	}
+	
 	
 }
 
