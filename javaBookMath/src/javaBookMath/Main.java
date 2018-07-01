@@ -27,6 +27,19 @@ public class Main {
 		System.out.println(("Sum: " + sum));
 		
 		
+		try {
+			printAverage(100, 0);
+			
+		} catch (IntegerDivisionByZero idbz) {
+			idbz.printStackTrace();
+			System.out.println("Exception handled in main().");
+			
+		} finally {
+			System.out.println("Finally done in main().");
+			
+		}
+		System.out.println("Exit main().");
+		
 		
 		
 		
@@ -36,7 +49,7 @@ public class Main {
 	
 	public static void printAverage(int totalSum, int totalNumber) 
 		throws IntegerDivisionByZero{
-			int average = computerAverage(totalSum, totalNumber);
+			int average = computeAverage(totalSum, totalNumber);
 			System.out.println("Average = " + totalSum + " / " + totalNumber + " = " +average);
 			System.out.println("Exit printAvreage().");
 		}
@@ -48,7 +61,6 @@ public class Main {
 			throw new IntegerDivisionByZero("Integer Division By zero");
 		return sum/number;
 		}
-	}
 	
 	
 }
