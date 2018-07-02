@@ -4,6 +4,11 @@ public class driver {
 
 	public static void main(String[] args) {
 		
+		String billboard = "Just";
+		billboard.concat(" lost in space.");
+		System.out.println(billboard);
+		billboard = billboard.concat(" advertise").concat(" here.");
+		
 		int[] frequencyData = new int [Character.MAX_VALUE];
 		String str = "You cannot change me!";
 		
