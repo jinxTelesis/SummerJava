@@ -59,7 +59,17 @@ public class driver {
 		List<Integer> intList = new ArrayList<>();
 		intList.add(10); intList.add(20); intList.add(1);
 		System.out.println(intList);
+		
 
+	}
+	
+	public static <E> void printListWithIndex(List<E> list)
+	{
+		List<String> newList = new ArrayList<>();
+		for(int i = 0; i < list.size(); i++)
+		{
+			newList.add(i + ":" + list.get(i));
+		}
 	}
 
 }
