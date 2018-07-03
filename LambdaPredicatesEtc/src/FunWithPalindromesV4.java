@@ -32,7 +32,33 @@ public class FunWithPalindromesV4 {
 		List<String> strGT3 = filterStrings(words, predicate4);
 		System.out.println("Words with length > 3:      " + strGT3);
 		
+		Predicate<String> predicate5 = str->
+			str.length() > 3 && isCaseSensitivePalindrome(str);
+		List<String> palindromesGT3 = filterStrings(words, predicate5);
+		System.out.println("Case-sensitive palindromes, length > 3: " + palindromesGT3);
+		
+		
+		
+		Predicate<String> predicateA = str -> {
+			return str.length() > 3 && isCaseSensitivePalindrome(str);
+		};
+		
+		Predicate<String> predicateB = str -> {
+			boolean result1 = str.length() > 3;
+			boolean result2 = isCaseSensitivePalindrome(str);
+			return result1 && result2;
+		};
+		
+		Predicate<String> predicateC = str -> {
+			if(str == null || str.equals("") || str.length() <= 3) {
+				return false;
+			}
+			StringBuilder sb = new StringBuilder(str);
+			boolean result = str.equals(sb.reverse().toString());
+			return result;
+		};
 	}
+		
 
 	// not finished
 	private static <E> List<E> filterStrings(List<E> list, Predicate<E> predicate) {
