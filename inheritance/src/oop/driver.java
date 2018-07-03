@@ -2,74 +2,36 @@ package oop;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class driver {
 
 	public static void main(String[] args) {
-		
-		String billboard = "Just";
-		billboard.concat(" lost in space.");
-		System.out.println(billboard);
-		billboard = billboard.concat(" advertise").concat(" here.");
-		
-		int[] frequencyData = new int [Character.MAX_VALUE];
-		String str = "You cannot change me!";
-		
-		StringBuilder left = new StringBuilder("left");
-		StringBuilder right = new StringBuilder("Right");
-		StringBuilder[] strBuilders = {left, right, left};
-		String march = String.join("-->", strBuilders);
-		System.out.println(march);
-		
-		ArrayList<StringBuilder> sbList = new ArrayList<>();
-		sbList.add(right); sbList.add(left); sbList.add(null); sbList.add(null);
-		String lastStr = "[" + String.join(", ", sbList) + "]";
-		System.out.println(lastStr);
-		
-		String[] wordArray = {"yo","yo","yo","yo"};
-		
-		List<StringBuilder> sbListb = new ArrayList<>();
-		
-		for(int i =  0; i < str.length(); i++)
-		{
-			try {
-				frequencyData[str.charAt(i)]++;
-				
-			} catch (StringIndexOutOfBoundsException e)
-			{
-				System.out.println("Index error detected: " + i + " not in range.");
-			}
-		}
-		
-		System.out.println("Character frequency for string: \"" + str + "\"");
-		for(int i =0; i < frequencyData.length; i++) {
-			if(frequencyData[i] !=0)
-				System.out.println((char)i + "( code " + i + "): " + frequencyData[i]);
-		}
-		
-		System.out.println("Copying into a char array:");
-		char [] destination = new char [str.length() - 3];
-		str.getChars(0, 7, destination, 7);
-		
-		for(int i = 0; i < destination.length; i++) {
-			System.out.println(destination[i]);
-		}
-		System.out.println();
-		
-		List<Integer> intList = new ArrayList<>();
-		intList.add(10); intList.add(20); intList.add(1);
-		System.out.println(intList);
-		
-
-	}
 	
-	public static <E> void printListWithIndex(List<E> list)
-	{
-		List<String> newList = new ArrayList<>();
-		for(int i = 0; i < list.size(); i++)
-		{
-			newList.add(i + ":" + list.get(i));
-		}
+		StringBuilder banner = new StringBuilder("love ");
+		LocalsOnly instance = new LocalsOnly();
+		Predicate<String> p = instance.getPredicate(banner);
+		System.out.println(p.test("never dies!" + " " + banner));
+		
+	
+		
 	}
-
+		public Predicate<String> getPredicate(StringBuilder banner){
+			List<String> words = new ArrayList<>();
+			words.add("Otto"); words.add("ADA"); words.add("Alyla");
+			words.add("Bob"); words.add("HannaH");
+			
+			// banner = new StringBuilder(); Illegal not final
+			// words = new ArrayList<>(); Illegal not final
+			
+			return str-> {
+				// String banner = "Don't redeclare me!";
+				//String[] words = new String[6]; Illegal don't redeclare me in a lambda
+				System.out.println("List: " + words);
+				banner.append(str);
+				return str.length() > 5;
+			}
+			
+		}
+	
 }
