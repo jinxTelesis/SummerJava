@@ -55,6 +55,10 @@ public class driver {
 			System.out.println(destination[i]);
 		}
 		System.out.println();
+		
+		List<Integer> intList = new ArrayList<>();
+		intList.add(10); intList.add(20); intList.add(1);
+		System.out.println(intList);
 
 	}
 
