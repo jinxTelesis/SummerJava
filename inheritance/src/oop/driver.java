@@ -1,5 +1,8 @@
 package oop;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class driver {
 
 	public static void main(String[] args) {
@@ -11,6 +14,21 @@ public class driver {
 		
 		int[] frequencyData = new int [Character.MAX_VALUE];
 		String str = "You cannot change me!";
+		
+		StringBuilder left = new StringBuilder("left");
+		StringBuilder right = new StringBuilder("Right");
+		StringBuilder[] strBuilders = {left, right, left};
+		String march = String.join("-->", strBuilders);
+		System.out.println(march);
+		
+		ArrayList<StringBuilder> sbList = new ArrayList<>();
+		sbList.add(right); sbList.add(left); sbList.add(null); sbList.add(null);
+		String lastStr = "[" + String.join(", ", sbList) + "]";
+		System.out.println(lastStr);
+		
+		String[] wordArray = {"yo","yo","yo","yo"};
+		
+		List<StringBuilder> sbListb = new ArrayList<>();
 		
 		for(int i =  0; i < str.length(); i++)
 		{
