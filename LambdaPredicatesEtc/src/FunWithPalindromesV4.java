@@ -58,6 +58,22 @@ public class FunWithPalindromesV4 {
 			return result;
 		};
 		
+		Machine machine = new Machine();
+		machine.setState(MachineState.IDLE);
+		
+		MachineState state = machine.getState();
+		
+		System.out.println("All machine states: ");
+		
+		for (MachineState ms: MachineState.values()) {
+			System.out.println(ms + ":" + ms.ordinal());
+		}
+		
+		System.out.println("Comparison:");
+		MachineState state1 = MachineState.BUSY;
+		MachineState state2 = state1;
+		MachineState state3 = MachineState.BLOCKED;
+		
 		
 		
 		
