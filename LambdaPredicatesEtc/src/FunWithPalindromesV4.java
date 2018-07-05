@@ -57,6 +57,9 @@ public class FunWithPalindromesV4 {
 			boolean result = str.equals(sb.reverse().toString());
 			return result;
 		};
+		
+		
+		
 	}
 		
 
