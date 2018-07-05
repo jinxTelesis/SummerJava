@@ -74,9 +74,18 @@ public class FunWithPalindromesV4 {
 		MachineState state2 = state1;
 		MachineState state3 = MachineState.BLOCKED;
 		
+		System.out.println("Minimum value: " + findMinimum(new int[] {3,5,2,8,6})); // anoynmous array
+		System.out.println("max value is : " + findMinimum(new int[] {6,10,14,16,19}));
+		System.out.println("black" + findMinimum(new int[] { 10,34,90,57,11}));
 		
-		
-		
+	}
+	
+	public static int findMinimum(int[] dataSeq) {
+		int min = dataSeq[0];
+		for (int index = 1; index < dataSeq.length; ++index)
+			if(dataSeq[index] < min)
+				min = dataSeq[index];
+			return min;
 	}
 		
 
