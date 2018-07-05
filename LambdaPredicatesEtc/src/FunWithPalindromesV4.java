@@ -78,6 +78,23 @@ public class FunWithPalindromesV4 {
 		System.out.println("max value is : " + findMinimum(new int[] {6,10,14,16,19}));
 		System.out.println("black" + findMinimum(new int[] { 10,34,90,57,11}));
 		
+		int[][] mXnArray = {
+				{16, 7, 12},
+				{9, 20, 18},
+				{14,11,5},
+				{8,5,10}
+		};
+		
+		int min = mXnArray[0][0];
+		
+		for (int i =0; i < mXnArray.length; ++i)
+		{
+			for(int j = 0; j < mXnArray[i].length; ++j)
+				min = Math.min(min, mXnArray[i][j]);
+		}
+		System.out.println("Minimum value: " + min);
+		
+		
 	}
 	
 	public static int findMinimum(int[] dataSeq) {
@@ -88,6 +105,7 @@ public class FunWithPalindromesV4 {
 			return min;
 	}
 		
+	
 
 	// not finished
 	private static <E> List<E> filterStrings(List<E> list, Predicate<E> predicate) {
