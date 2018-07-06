@@ -111,9 +111,25 @@ public class FunWithPalindromesV4 {
 		}
 		
 		printIntArray(dataSeq);
+		
+		int[][] matrix2 = {{8,4},{6,3,2},{7}};
+		
+		int min2 = findMinimum2(matrix2[0]);
+		
+		for(int i = 1; i < matrix2.length; ++i) {
+			int minInRow = findMinimum2(matrix2[i]);// sub min iteration
+			min = Math.min(min, minInRow); // checks if value of row 0, 1 and 2 is smallest
+		}
 
-		
-		
+	}
+	
+	public static int findMinimum2(int[] seq) {
+		int min = seq[0];
+		for (int i = 1; i < seq.length; i++)
+		{
+			min = Math.min(min, seq[i]);
+		}
+		return min;
 	}
 	
 	public static void printIntArray(int[] array) {
