@@ -12,7 +12,13 @@ public class FunWithPalindromesV4 {
 		return str.equalsIgnoreCase(new StringBuilder(str).reverse().toString());
 	}
 	
+	
+	
 	public static void main(String[] args) {
+		
+		class Pizza {
+			String meat = "beef";
+		}
 		
 		List<String> words = new ArrayList<>();
 		words.add("Otto"); words.add("ADA"); words.add("Alyla");
@@ -94,8 +100,37 @@ public class FunWithPalindromesV4 {
 		}
 		System.out.println("Minimum value: " + min);
 		
+		int[] dataSeq = {8,4,6,2,1};
+		
+		printIntArray(dataSeq);
+		
+		for (int index = 1; index < dataSeq.length; ++index)
+		{
+			if(dataSeq[index-1] > dataSeq[index])
+				swap(dataSeq, index-1, index);
+		}
+		
+		printIntArray(dataSeq);
+
+		
 		
 	}
+	
+	public static void printIntArray(int[] array) {
+		for (int value : array)
+			System.out.println(" " + value);
+		System.out.println();
+	}
+	
+	public static void swap(int[] intArray, int i, int j) {
+		int tmp = intArray[i]; intArray[i] = intArray[j]; intArray[j] = tmp;
+	}
+	
+	public static void swap(int v1, int v2) {
+		int tmp = v1; v1 = v2; v2 = tmp;
+	}
+
+	
 	
 	public static int findMinimum(int[] dataSeq) {
 		int min = dataSeq[0];
