@@ -35,7 +35,7 @@ public class GuiInterviewJframe extends JFrame  {
 		
 		event theEvent = new event();
 		button.addActionListener(theEvent);
-		event theEvent2 = new event();
+		event2 theEvent2 = new event2();
 		button2.addActionListener(theEvent2);
 		
 	}
@@ -45,6 +45,15 @@ public class GuiInterviewJframe extends JFrame  {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			label.setText("Now you can see words here");
+		}
+		
+	}
+	
+	public class event2 implements ActionListener{
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			label2.setText("Blast off to the moon baby");
 		}
 		
 	}
