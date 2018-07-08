@@ -64,16 +64,19 @@ public class GuiInterviewJframe extends JFrame  {
 			}
 		}
 		
+
+		
 	}
 	
-	
-	
-
-	
-	
-	
-	
-	
+	public static void main (String ars[])
+	{
+		GuiInterviewJframe gui = new GuiInterviewJframe();
+		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui.setVisible(true);
+		gui.setSize(500,400);
+		
+		
+	}
 	
 
 }
