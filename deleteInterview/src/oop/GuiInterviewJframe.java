@@ -30,6 +30,11 @@ public class GuiInterviewJframe extends JFrame {
 	}
 	
 	public static void main(String args[]) {
+		GuiInterviewJframe gui = new GuiInterviewJframe();
+		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui.setVisible(true);
+		gui.setSize(400,400);
+		
 	
 	
 	
