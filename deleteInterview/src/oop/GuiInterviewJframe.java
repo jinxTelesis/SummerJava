@@ -15,6 +15,8 @@ import javax.swing.JLabel;
 public class GuiInterviewJframe extends JFrame  {
 	private JLabel label;
 	private JButton button;
+	private JButton button2;
+	private JLabel label2;
 	
 	public GuiInterviewJframe() {
 		setLayout(new FlowLayout());
@@ -22,11 +24,19 @@ public class GuiInterviewJframe extends JFrame  {
 		button = new JButton("Click for text");
 		add(button);
 		
+		button2 = new JButton("Rocket baby");
+		add(button2);
+		
 		label = new JLabel("");
 		add(label);
 		
+		label2 = new JLabel("");
+		add(label2);
+		
 		event theEvent = new event();
 		button.addActionListener(theEvent);
+		event theEvent2 = new event();
+		button2.addActionListener(theEvent2);
 		
 	}
 	
