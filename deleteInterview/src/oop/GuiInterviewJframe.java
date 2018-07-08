@@ -1,5 +1,6 @@
 package oop;
 
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,6 +18,9 @@ public class GuiInterviewJframe extends JFrame  {
 	private JLabel randomLabel;
 	
 	public GuiInterviewJframe() {
+		// added layout
+		setLayout(new FlowLayout());
+		
 		promptLabel = new JLabel("Enter a random number 1-10");
 		add(promptLabel);
 		
@@ -40,8 +44,24 @@ public class GuiInterviewJframe extends JFrame  {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
+			randomNum = (int)(Math.random() * 10 + 1);
 			
-			
+			try {
+				guess = (int)(Double.parseDouble(textfield.getText()));
+				
+				if(guess == randomNum)
+				{
+					resultLabel.setText("you won the game");
+				}
+				else
+				{
+					resultLabel.setText("you lost the game!");
+				}
+				randomLabel.setText("The random number generated was : " + randomNum);
+				
+			} catch (Exception exc) { 
+				randomLabel.setText("Please enter numbers only!");
+			}
 		}
 		
 	}
