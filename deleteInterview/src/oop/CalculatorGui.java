@@ -45,6 +45,31 @@ public class CalculatorGui extends JFrame {
 		c.gridwidth = 3;
 		add(num2, c);
 		
+		add = new JButton("+");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 2;
+		c.gridwidth = 1;
+		add(add, c);
+		
+		subtract = new JButton("-");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.gridy = 2;
+		add(subtract, c);
+		
+		multiply = new JButton("*");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 2;
+		c.gridy = 2;
+		add(multiply, c);
+		
+		divide = new JButton("/");
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 3;
+		c.gridy = 2;
+		add(divide, c);
+		
 		
 		
 		
