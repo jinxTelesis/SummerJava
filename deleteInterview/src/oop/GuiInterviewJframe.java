@@ -75,13 +75,13 @@ public class GuiInterviewJframe extends JFrame  {
 		
 		//beeper gui = new beeper();
 		
-		GuiBasics gui = new GuiBasics();
-		
+		//GuiBasics gui = new GuiBasics();
+		mousemover gui = new mousemover();
 		
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gui.setVisible(true);
 		gui.pack();
-		gui.setTitle("Wonder interview program");
+		gui.setTitle("Sweet program dude");
 		
 		
 	}

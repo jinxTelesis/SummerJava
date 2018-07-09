@@ -1,6 +1,8 @@
 package oop;
 
+import java.awt.AWTException;
 import java.awt.GridLayout;
+import java.awt.Robot;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,7 +18,7 @@ public class mousemover extends JFrame {
 	JButton button;
 	
 	public mousemover() {
-		setLayout(new GridLayout(5,2, 5, 5));
+		setLayout(new GridLayout(5,3, 5, 5));
 		
 		label1 = new JLabel("Enter number of movements:");
 		add(label1);
@@ -39,6 +41,9 @@ public class mousemover extends JFrame {
 		label4 = new JLabel("Enter screen height in pixels");
 		add(label4);
 		
+		tf4 = new JTextField();
+		add(tf4);
+		
 		button = new JButton("Start");
 		add(button);
 		
@@ -56,11 +61,33 @@ public class mousemover extends JFrame {
 			try {
 				int num = (int)(Double.parseDouble(tf1.getText()));
 				int delay = (int)(Double.parseDouble(tf2.getText()));
-				int width = (Integer.parseInt(tf3.getText()));
-				int height = (Integer.parseInt(tf4.getText()));
+				int width = (int)(Double.parseDouble(tf3.getText()));
+				int height = (int)(Double.parseDouble(tf4.getText()));
 				
-			} catch () {
+				if(num <= 0 || delay <= 0 || width <= 0 || height <=0) {
+					errorLabel.setText("Please enter positive values");
+				}
+				else
+				{
+					errorLabel.setText("");
+					try {
+						Robot rob = new Robot();
+						for(int i =0; i<=num; i++)
+						{
+							rob.mouseMove((int)(Math.random()*width), 
+									(int) (Math.random()*height));
+							rob.delay(delay);
+							
+						}
+					} catch (AWTException ex) {
+						System.exit(0);
+					}
+					
+				}
 				
+				
+			} catch (Exception ex2) {
+				errorLabel.setText("Numbers Only!");
 			}
 			
 		}
