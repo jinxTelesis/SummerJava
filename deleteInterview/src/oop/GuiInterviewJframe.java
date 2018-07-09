@@ -72,7 +72,12 @@ public class GuiInterviewJframe extends JFrame  {
 	{
 		//GuiInterviewJframe gui = new GuiInterviewJframe();
 		//menuTutorial gui = new menuTutorial();
-		beeper gui = new beeper();
+		
+		//beeper gui = new beeper();
+		
+		GuiBasics gui = new GuiBasics();
+		
+		
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gui.setVisible(true);
 		gui.setSize(500,400);
