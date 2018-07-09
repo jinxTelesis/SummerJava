@@ -119,12 +119,24 @@ public class CalculatorGui extends JFrame {
 				result.setForeground(Color.BLUE);
 	
 			} else if(op.equals("-")) {
-				double diff = number1 + number2;
+				double diff = number1 - number2;
 				result.setText(number1 + " - " + number2 + " = " + diff);
 				result.setForeground(Color.BLUE);
 			} else if(op.equals("*")) {
-				double prod = number1 + number2;
+				double prod = number1 * number2;
+				result.setText(number1 + " * " + number2 + " = " + prod);
+				result.setForeground(Color.blue);
 				
+			} else if(op.equals("/")) {
+				if(number2 == 0) {
+					result.setText("Cannot divide by zero");
+					result.setForeground(Color.red);
+				}
+				else {
+				double quot = number1 / number2;
+				result.setText(number1 + " / " + number2 + " = " + quot);
+				result.setForeground(Color.BLUE);
+				}
 			}
 			
 		}
