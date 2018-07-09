@@ -80,7 +80,8 @@ public class GuiInterviewJframe extends JFrame  {
 		
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gui.setVisible(true);
-		gui.setSize(500,400);
+		gui.pack();
+		gui.setTitle("Wonder interview program");
 		
 		
 	}
