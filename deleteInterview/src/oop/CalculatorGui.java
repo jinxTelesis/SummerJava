@@ -38,7 +38,12 @@ public class CalculatorGui extends JFrame {
 		c.gridwidth = 1;
 		add(enter2, c);
 		
-		
+		num2 = new JTextField(10);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.gridy = 1;
+		c.gridwidth = 3;
+		add(num2, c);
 		
 		
 		
