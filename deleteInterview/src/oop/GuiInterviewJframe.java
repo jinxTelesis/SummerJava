@@ -76,7 +76,8 @@ public class GuiInterviewJframe extends JFrame  {
 		//beeper gui = new beeper();
 		
 		//GuiBasics gui = new GuiBasics();
-		mousemover gui = new mousemover();
+		//mousemover gui = new mousemover();
+		CalculatorGui gui = new CalculatorGui();
 		
 		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gui.setVisible(true);

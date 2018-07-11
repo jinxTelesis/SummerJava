@@ -92,7 +92,7 @@ public class CalculatorGui extends JFrame {
 	public class event implements ActionListener{
 
 		@Override
-		public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent firstEv) {
 			double number1, number2;
 			
 			try {
@@ -112,6 +112,8 @@ public class CalculatorGui extends JFrame {
 			}
 			
 			String op = firstEv.getActionCommand();
+			
+			
 			
 			if(op.equals("+")) {
 				double sum = number1 + number2;
@@ -140,6 +142,9 @@ public class CalculatorGui extends JFrame {
 			}
 			
 		}
+		
+		
+		
 		
 	}
 
