@@ -1,24 +1,25 @@
 package oop;
 
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Test {
 
 	public static void main(String[] args) {
-		Test obj = new Test(n);
+	
+		ArrayList<String> palindromes = new ArrayList<String>();
+		ArrayList<String> identifier = new ArrayList<String>();
+		ArrayList<String> indenifier2 = new ArrayList<String>();
+		ArrayList<String> indentifier3 = new ArrayList<String>();
+		
+		ArrayList<String> id3 = new ArrayList<>(20);
+		
+		List<String> palindromes2 = new LinkedList<String>();
 
 	}
 	
-	static int i = 5;
-	static int n;
-	int j = 7;
-	int k;
 	
-	public Test(int m) {
-		System.out.println(i + ", " + j + ", " + k + ", " + n + ", " + m);
-		
-	}
-	
-	{ j = 70; n = 20;}
-	
-	static { i = 50; }
 
 }
