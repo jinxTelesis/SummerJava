@@ -28,6 +28,8 @@ private StringBuilder banner;
 		System.out.println(p.test("never dies!") + " " + tObj.banner);
 		
 		
+		
+		
 	}
 	
 	public Predicate<String> getPredicate(){
