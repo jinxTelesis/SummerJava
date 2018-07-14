@@ -25,7 +25,15 @@ public class Test {
 		
 		Object[] objArray = new String[10];
 		
+		List<String> list1 = new ArrayList<>();
+		list1.add(0, "First");
+		list1.add(list1.size(), "Last");
+		
+		List<StringBuilder> sbList = new ArrayList<>();
 
+		
+		
+		
 	}
 	
 	
