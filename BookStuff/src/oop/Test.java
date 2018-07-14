@@ -33,10 +33,26 @@ public class Test {
 		
 		List<Integer> intList2 = new ArrayList<>();
 		intList2.add(10); intList2.add(20); intList2.add(1);
+		
+		//List<String> strList2 = new ArrayList<>(strList);
+		//boolean trueOrFalse = strList.equals(strList2);
 
+		String[] wordArray = {"level", "Ada", "kayak", "Bob", "Rotator", "Bob"};
+		
+		System.out.println("Create an empty list of strings");
+		List<String> strList = new ArrayList<>();
+		//printListWithIndex(strList);
 		
 		
 		
+		
+	}
+	
+	public static <E> void pinrtListWithIndex(List<E> list) {
+		List<String> newList = new ArrayList<>();
+		for (int i = 0; i < list.size(); i++) {
+			newList.add(i + ":" + list.get(i));
+		}
 	}
 	
 	
