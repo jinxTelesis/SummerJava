@@ -57,6 +57,16 @@ public class Test {
 		
 		printListWithIndex(strList);
 		
+		System.out.println("Element removed: " + strList.remove(0));
+		printListWithIndex(strList);
+		
+		System.out.println("Element removed: " + strList.remove("Java"));
+		printListWithIndex(strList);
+		
+		System.out.println("The size of the list is " + strList.size());
+		
+		boolean result = strList.isEmpty();
+		System.out.println("The list " + (result ? "is" : "is not") + " empty.");
 		
 		
 		
