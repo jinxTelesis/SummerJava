@@ -68,6 +68,16 @@ public class Test {
 		boolean result = strList.isEmpty();
 		System.out.println("The list " + (result ? "is" : "is not") + " empty.");
 		
+		System.out.println("First element: " + strList.get(0));
+		System.out.println("Last element: " + strList.get(strList.size() - 1));
+		
+		List<String> strList2 = new ArrayList<>(strList);
+		boolean trueOrFalse = strList.equals(strList2);
+		System.out.println("The lists strList and strList2 are" + (trueOrFalse ? "" : " not " + " equal."));
+		strList2.add(null);
+		printListWithIndex(strList2);
+		trueOrFalse = strList.equals(strList2);
+		
 		
 		
 	}
