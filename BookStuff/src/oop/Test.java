@@ -48,6 +48,15 @@ public class Test {
 			printListWithIndex(strList);
 		}
 		
+		strList.add(2, "Java");
+		printListWithIndex(strList);
+		
+		String oldElement = strList.set(1, "Naan");
+		System.out.println("Element that was replaced: " + oldElement);
+		printListWithIndex(strList);
+		
+		printListWithIndex(strList);
+		
 		
 		
 		
