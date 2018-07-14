@@ -30,6 +30,9 @@ public class Test {
 		list1.add(list1.size(), "Last");
 		
 		List<StringBuilder> sbList = new ArrayList<>();
+		
+		List<Integer> intList2 = new ArrayList<>();
+		intList2.add(10); intList2.add(20); intList2.add(1);
 
 		
 		
