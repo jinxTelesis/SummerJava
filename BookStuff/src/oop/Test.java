@@ -78,6 +78,38 @@ public class Test {
 		printListWithIndex(strList2);
 		trueOrFalse = strList.equals(strList2);
 		
+		boolean found = strList.contains("Naan");
+		String msg = found ? "contains" : "does not contain";
+		
+		int pos = strList.indexOf("Bob"); // basically a re find 
+		pos = strList.indexOf("BOB");
+		
+		pos = strList.lastIndexOf("Bob");
+		printListWithIndex(strList);
+		
+		for(int i = 0; i <strList.size(); i++) {
+			System.out.println(i + ":" + strList.get(i) + " ");
+		}
+		
+		for(String str : strList) {
+			System.out.println(str + " ");
+		}
+		
+		Object[] objArra = strList.toArray();
+		System.out.println(objArray.length); // no need to call array length just 
+		
+		for(Object obj : objArray) {
+			String str = (String) obj; // cast
+			//System.out.print(str.length() + " ");
+		}
+		
+		String[] strArray = strList.toArray(new String[0]);
+		System.out.println(strArray.length);
+		
+		for (String str : strArray) {
+			System.out.println(str.length() + " ");
+		}
+		
 		
 		
 	}
