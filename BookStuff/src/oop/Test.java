@@ -41,14 +41,19 @@ public class Test {
 		
 		System.out.println("Create an empty list of strings");
 		List<String> strList = new ArrayList<>();
-		//printListWithIndex(strList);
+		printListWithIndex(strList);
+		
+		for(String str : wordArray) {
+			strList.add(str);
+			printListWithIndex(strList);
+		}
 		
 		
 		
 		
 	}
 	
-	public static <E> void pinrtListWithIndex(List<E> list) {
+	public static <E> void printListWithIndex(List<E> list) {
 		List<String> newList = new ArrayList<>();
 		for (int i = 0; i < list.size(); i++) {
 			newList.add(i + ":" + list.get(i));
