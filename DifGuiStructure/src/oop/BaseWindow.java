@@ -53,12 +53,13 @@ public class BaseWindow extends JFrame implements ActionListener{
 		gui.setSize(300,100);
 		gui.setVisible(true);
 		gui.setTitle("Main Windowww");
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
 		
+		TAArea gui2 = new TAArea();
+		gui2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui2.setSize(300, 300);
+		gui2.setVisible(true);
+		gui2.setTitle("Interview title");
+
 	}
 
 }
