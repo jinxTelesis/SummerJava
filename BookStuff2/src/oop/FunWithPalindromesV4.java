@@ -20,7 +20,15 @@ public class FunWithPalindromesV4 {
 		
 		List<String> palindromes1 = filterStrings(words,
 				str -> isCaseSensitivePalindrome(str));
+		System.out.println("Case-insensitive palindromes: " + palindromes1);
 		
+		List<String> palindromes2 = filterStrings(words, str ->
+		isCaseInsensitivePalindrome(str));
+		System.out.println("case-insensitive palindromes" + palindromes2); 
+		
+		Predicate<String> predicate3 = str -> !isCaseSensitivePalindrome(str);
+		List<String> nonPalindromes = filterStrings(words, predicate3);
+		System.out.println("Case-sensitive palindromes, length > 3: " + nonPalindromes);
 		
 	}
 	
