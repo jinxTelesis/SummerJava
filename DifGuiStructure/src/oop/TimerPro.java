@@ -1,6 +1,8 @@
 package oop;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Timer;
 
 import javax.swing.JButton;
@@ -32,9 +34,17 @@ public class TimerPro extends JFrame {
 		timerLabel = new JLabel("Waiting...", SwingConstants.CENTER);
 		add(timerLabel);
 		
+		event e = new event();
+		button.addActionListener(e);
 		
 		
-		
+	}
+	
+	public class event implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			int count = (int) (Double.parseDouble(tf.getText()));
+			timerLabel.setText("Time left: " + count);
+		}
 	}
 	
 
