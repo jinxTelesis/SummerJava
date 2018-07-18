@@ -2,6 +2,8 @@ package oop;
 
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,6 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
+
+import oop.TimerPro.TimeClass;
 
 public class ClickerClass extends JFrame {
 	
@@ -85,6 +89,33 @@ public class ClickerClass extends JFrame {
 		
 		ClickButtonClass cbc = new ClickButtonClass();
 		clickButton.addActionListener(cbc);
+		
+	}
+	
+	public class StartButtonClass implements ActionListener {
+		public void actionPerformed(ActionEvent sbc) {
+			// start timer, set couple buttons to false another to true 
+			// catch an exception 
+			
+			try {
+				int timeCount = (int)(Double.parseDouble(tf.getText()));
+				
+				if(timeCount <= 0) {
+					tf.setText("Positive numbers!");
+				}
+				else {
+					timeLeft.setText("Time left: " + timeCount);
+					TimeClass tc = new TimeClass();
+					timer = new Timer(1000, tc);
+					timer.start(); // swing timer
+					startButton.setEnabled(false);
+					clickButton.setEnabled(true);
+				}
+				
+				
+			} // fill catch
+			
+		}
 		
 	}
 
