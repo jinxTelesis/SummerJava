@@ -1,15 +1,16 @@
 package oop;
 
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.Timer;
 
 public class TimerPro extends JFrame {
 	
@@ -44,6 +45,34 @@ public class TimerPro extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			int count = (int) (Double.parseDouble(tf.getText()));
 			timerLabel.setText("Time left: " + count);
+			
+			TimeClass tc = newTimeClass(count);
+			timer = new Timer(1000, tc);
+			timer.start();
+		}
+	}
+	
+	public class TimeClass implements ActionListener{
+		int counter;
+		
+		public TimeClass(int counter) {
+			this.counter = counter;
+			
+		}
+		
+		public void actionPerformed(ActionEvent tc) {
+			counter--;
+			
+			if(counter >= 1) {
+				timerLabel.setText("Time left: " + counter);
+			}
+			else
+			{
+				timer.stop();
+				timerLabel.setText("Done!");
+				Toolkit.getDefaultToolkit().beep();
+			}
+			
 		}
 	}
 	
