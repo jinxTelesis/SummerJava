@@ -2,6 +2,7 @@ package oop;
 
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -90,6 +91,8 @@ public class ClickerClass extends JFrame {
 		ClickButtonClass cbc = new ClickButtonClass();
 		clickButton.addActionListener(cbc);
 		
+		
+		
 	}
 	
 	public class StartButtonClass implements ActionListener {
@@ -105,7 +108,7 @@ public class ClickerClass extends JFrame {
 				}
 				else {
 					timeLeft.setText("Time left: " + timeCount);
-					TimeClass tc = new TimeClass();
+					TimeClass tc = new TimeClass(timeCount);
 					timer = new Timer(1000, tc);
 					timer.start(); // swing timer
 					startButton.setEnabled(false);
@@ -113,10 +116,43 @@ public class ClickerClass extends JFrame {
 				}
 				
 				
-			} // fill catch
+			} catch(NumberFormatException ex) {
+				tf.setText("Numbers only!");
+			}
 			
 		}
 		
+	}
+	
+	public class ClickButtonClass implements ActionListener{
+		public void actionPerformed(ActionEvent cbd) {
+			clickCounter++;
+			clickLabel.setText("Clicks: " +clickCounter);
+		}
+	}
+	
+	public class TimeClass implements ActionListener{
+		int timerCounter;
+		
+		public TimeClass(int timerCounter) {
+			this.timerCounter = timerCounter;
+		}
+		
+		public void actionPerformed(ActionEvent tc) {
+			timerCounter--;
+			
+			if(timerCounter >= 1) {
+				timeLeft.setText("Time left: " + timerCounter);
+				
+			}
+			else {
+				timer.stop();
+				timeLeft.setText("Done");
+				clickButton.setEnabled(false); // make it unclickable
+				Toolkit.getDefaultToolkit().beep(); // adds sound
+				
+			}
+		}
 	}
 
 }
