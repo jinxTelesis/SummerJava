@@ -48,17 +48,24 @@ public class BaseWindow extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String args[]) {
-		BaseWindow gui = new BaseWindow();
-		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gui.setSize(300,100);
-		gui.setVisible(true);
-		gui.setTitle("Main Windowww");
+//		BaseWindow gui = new BaseWindow();
+//		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		gui.setSize(300,100);
+//		gui.setVisible(true);
+//		gui.setTitle("Main Windowww");
+//		
+//		TAArea gui2 = new TAArea();
+//		gui2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		gui2.setSize(300, 300);
+//		gui2.setVisible(true);
+//		gui2.setTitle("Interview title");
 		
-		TAArea gui2 = new TAArea();
-		gui2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gui2.setSize(300, 300);
-		gui2.setVisible(true);
-		gui2.setTitle("Interview title");
+		TimerPro gui3 = new TimerPro();
+		gui3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui3.setSize(500,800);
+		gui3.pack();
+		gui3.setVisible(true);
+		gui3.setTitle("Interview program!");
 
 	}
 

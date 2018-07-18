@@ -46,7 +46,7 @@ public class TimerPro extends JFrame {
 			int count = (int) (Double.parseDouble(tf.getText()));
 			timerLabel.setText("Time left: " + count);
 			
-			TimeClass tc = newTimeClass(count);
+			TimeClass tc = new TimeClass(count);
 			timer = new Timer(1000, tc);
 			timer.start();
 		}
