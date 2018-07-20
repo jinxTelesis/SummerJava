@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Login {
 
@@ -34,7 +36,7 @@ public class Login {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 400, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -44,25 +46,29 @@ public class Login {
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setLabelFor(frame);
-		lblPassword.setBounds(64, 115, 71, 27);
+		lblPassword.setBounds(64, 96, 71, 27);
 		frame.getContentPane().add(lblPassword);
 		
 		textField = new JTextField();
-		textField.setBounds(167, 54, 152, 20);
+		textField.setBounds(145, 54, 137, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(167, 118, 152, 20);
+		textField_1.setBounds(145, 99, 137, 20);
 		frame.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(64, 184, 89, 23);
+		btnLogin.setBounds(64, 146, 89, 23);
 		frame.getContentPane().add(btnLogin);
 		
-		JButton btnExit = new JButton("Exit");
-		btnExit.setBounds(207, 184, 89, 23);
+		JButton btnExit = new JButton("Register");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnExit.setBounds(193, 146, 89, 23);
 		frame.getContentPane().add(btnExit);
 	}
 }
