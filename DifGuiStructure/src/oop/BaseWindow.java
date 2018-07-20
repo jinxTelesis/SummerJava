@@ -60,12 +60,24 @@ public class BaseWindow extends JFrame implements ActionListener{
 //		gui2.setVisible(true);
 //		gui2.setTitle("Interview title");
 		
-		TimerPro gui3 = new TimerPro();
-		gui3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gui3.setSize(500,800);
-		gui3.pack();
-		gui3.setVisible(true);
-		gui3.setTitle("Interview program!");
+//		TimerPro gui3 = new TimerPro();
+//		gui3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		gui3.setSize(500,800);
+//		gui3.pack();
+//		gui3.setVisible(true);
+//		gui3.setTitle("Interview program!");
+		
+//		ClickerClass gui4 = new ClickerClass();
+//		gui4.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		gui4.setSize(375, 135);
+//		gui4.setTitle("Simple button game");
+//		gui4.setVisible(true);
+		
+		ClickerClass gui5 = new ClickerClass();
+		gui5.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		gui5.setSize(375, 135);
+		gui5.setVisible(true);
+		gui5.setTitle("Clicky Game");
 
 	}
 

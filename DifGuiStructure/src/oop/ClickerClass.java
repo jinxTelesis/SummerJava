@@ -78,6 +78,10 @@ public class ClickerClass extends JFrame {
 		clickButton.setEnabled(false);
 		bottom.add(clickButton);
 		
+		startButton = new JButton("Starter");
+		startButton.setEnabled(true);
+		bottom.add(startButton);
+		
 		clickLabel = new JLabel("Clicks: 0", SwingConstants.CENTER);
 		bottom.add(clickLabel);
 		
@@ -131,6 +135,12 @@ public class ClickerClass extends JFrame {
 		}
 	}
 	
+	public class ExitClass implements ActionListener{
+		public void actionPerformed(ActionEvent ec) {
+			System.exit(0);
+		}
+	}
+	
 	public class TimeClass implements ActionListener{
 		int timerCounter;
 		
@@ -152,6 +162,18 @@ public class ClickerClass extends JFrame {
 				Toolkit.getDefaultToolkit().beep(); // adds sound
 				
 			}
+		}
+	}
+	
+	public class ResetClass implements ActionListener{
+		public void actionPerformed(ActionEvent rc) {
+			clickButton.setEnabled(false);
+			startButton.setEnabled(true);
+			clickCounter = 0;
+			clickLabel.setText("Clicks: O");
+			tf.setText("");
+			timeLeft.setText("Time left: ?");
+			
 		}
 	}
 
