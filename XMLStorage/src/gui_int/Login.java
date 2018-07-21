@@ -13,12 +13,14 @@ import java.awt.event.ActionEvent;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.JPasswordField;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Login {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JPasswordField passwordField_1;
+	private JTextField UserNameTxtF;
+	private JPasswordField passTF;
 	
 
 
@@ -64,16 +66,14 @@ public class Login {
 		lblPassword.setBounds(64, 96, 71, 27);
 		frame.getContentPane().add(lblPassword);
 		
-		textField = new JTextField();
-		textField.setBounds(145, 54, 137, 25);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		UserNameTxtF = new JTextField();
+		
+		UserNameTxtF.setBounds(145, 54, 137, 25);
+		frame.getContentPane().add(UserNameTxtF);
+		UserNameTxtF.setColumns(10);
 		
 		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
+		
 		btnLogin.setBounds(64, 146, 89, 23);
 		frame.getContentPane().add(btnLogin);
 		
@@ -85,9 +85,23 @@ public class Login {
 		btnExit.setBounds(193, 146, 89, 23);
 		frame.getContentPane().add(btnExit);
 		
-		passwordField_1 = new JPasswordField();
-		passwordField_1.setBounds(145, 99, 137, 25);
-		frame.getContentPane().add(passwordField_1);
+		passTF = new JPasswordField();
+		passTF.setBounds(145, 99, 137, 25);
+		frame.getContentPane().add(passTF);
+		
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String userName = UserNameTxtF.getText();
+				String userPass = passTF.getText();
+				
+			if(userName.equals("Billy") && userPass.equals("Bob")) {
+				System.out.println("Worked");
+			}
+				
+				
+			}
+		});
 		
 	
 	}
