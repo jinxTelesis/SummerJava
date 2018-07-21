@@ -17,6 +17,7 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.SystemColor;
 
 public class Login {
 
@@ -24,6 +25,8 @@ public class Login {
 	private JTextField UserNameTxtF;
 	private JPasswordField passTF;
 	private int MaxLogins = 0;
+	private String validUser = "Billy";
+	private String validPass = "Bob";
 	
 
 
@@ -57,9 +60,23 @@ public class Login {
 		
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 400, 280);
+		frame.getContentPane().setBackground(SystemColor.inactiveCaption);
+		frame.setBounds(100, 100, 378, 280);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Dre's XML DatabasePro");
+		
+		JLabel userInvalidLabel = new JLabel("");
+		userInvalidLabel.setFont(new Font("SansSerif", Font.PLAIN, 10));
+		userInvalidLabel.setForeground(Color.RED);
+		userInvalidLabel.setBounds(147, 76, 135, 16);
+		frame.getContentPane().add(userInvalidLabel);
+		
+		JLabel passInvalidLabel = new JLabel("");
+		passInvalidLabel.setFont(new Font("SansSerif", Font.PLAIN, 10));
+		passInvalidLabel.setForeground(Color.RED);
+		passInvalidLabel.setBounds(147, 121, 147, 16);
+		frame.getContentPane().add(passInvalidLabel);
 		
 		JLabel lblNewLabel = new JLabel("Username");
 		lblNewLabel.setBounds(64, 51, 71, 27);
@@ -72,6 +89,8 @@ public class Login {
 		
 		UserNameTxtF = new JTextField();
 		
+		
+		
 		UserNameTxtF.setBounds(145, 54, 137, 25);
 		frame.getContentPane().add(UserNameTxtF);
 		UserNameTxtF.setColumns(10);
@@ -81,29 +100,34 @@ public class Login {
 		btnLogin.setBounds(64, 146, 89, 23);
 		frame.getContentPane().add(btnLogin);
 		
-		JButton btnExit = new JButton("Register");
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		btnExit.setBounds(193, 146, 89, 23);
-		frame.getContentPane().add(btnExit);
+		JButton btnRegister = new JButton("Register");
+		
+		btnRegister.setBounds(193, 146, 89, 23);
+		frame.getContentPane().add(btnRegister);
 		
 		passTF = new JPasswordField();
 		passTF.setBounds(145, 99, 137, 25);
 		frame.getContentPane().add(passTF);
 		
-		JLabel passInvalidLabel = new JLabel("");
-		passInvalidLabel.setFont(new Font("SansSerif", Font.PLAIN, 10));
-		passInvalidLabel.setForeground(Color.RED);
-		passInvalidLabel.setBounds(147, 121, 147, 16);
-		frame.getContentPane().add(passInvalidLabel);
+		// should put in class or at least after all components are added
+		UserNameTxtF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent arg0) {
+			passInvalidLabel.setText("");
+			userInvalidLabel.setText("");
+			}
+		});
 		
-		JLabel userInvalidLabel = new JLabel("");
-		userInvalidLabel.setFont(new Font("SansSerif", Font.PLAIN, 10));
-		userInvalidLabel.setForeground(Color.RED);
-		userInvalidLabel.setBounds(147, 76, 135, 16);
-		frame.getContentPane().add(userInvalidLabel);
+		passTF.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				userInvalidLabel.setText("");
+				passInvalidLabel.setText("");
+			}
+		});
+		
+		// should put this in a class
+		// need to work on logic
 		
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -113,22 +137,35 @@ public class Login {
 				
 			// in future unhardcode this to actual checkup of usernames and passes
 				
-			if(userName.equals("Billy") && userPass.equals("Bob")) {
+			if(userName.equals(validUser) && userPass.equals(validPass)) {
 				System.out.println("Worked");
 				
-				// add other frame
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							DummyDatabaseFrame dummydbFrame = new DummyDatabaseFrame();
+							dummydbFrame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 				
 			}
 			else
 			{
 				MaxLogins++;
-				if(userName.equals("Billy")) {
+				if(userName.equals(validUser.toString())) {
 					passInvalidLabel.setText("Invalid password entered");
 				}
 				
-				if(userPass.equals("Bob")) {
+				if(userPass.equals(validPass.toString())) {
 					userInvalidLabel.setText("Username doesn't exist");
 				}
+			}
+			
+			if(MaxLogins >= 4) {
+				userInvalidLabel.setText("lockout in 1 more attempt");
 			}
 			
 			if(MaxLogins >= 5) {
@@ -137,6 +174,21 @@ public class Login {
 			}
 				
 				
+			}
+		});
+		
+		btnRegister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							RegisterJF frame = new RegisterJF();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		
