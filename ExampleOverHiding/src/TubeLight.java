@@ -20,5 +20,16 @@ public class TubeLight extends Light{
 		System.out.println("Energy cost for " + lightType + ": " + flatrate);
 		return flatrate;
 	}
+	
+	@Override
+	public TubeLight makeInstance() {
+		System.out.println(">> TubeLight.makeInstance(): ");
+		return new TubeLight();
+	}
+	
+	public static void printLightType() {
+		System.out.println(">> Static TubeLight.printLightType(): ");
+		System.out.println(lightType);
+	}
 
 }
