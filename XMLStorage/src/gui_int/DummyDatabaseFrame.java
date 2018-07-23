@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import java.awt.Font;
 
 public class DummyDatabaseFrame extends JFrame {
 
@@ -57,7 +58,7 @@ public class DummyDatabaseFrame extends JFrame {
 
 	public DummyDatabaseFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1200, 800);
+		setBounds(100, 100, 800, 600);
 		setTitle("Dre's XML DatabasePro");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -126,6 +127,7 @@ public class DummyDatabaseFrame extends JFrame {
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		textField_1.setBounds(181, 57, 50, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
