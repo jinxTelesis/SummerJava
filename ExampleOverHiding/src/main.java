@@ -1,5 +1,5 @@
 
-public class main  {
+public class main extends MySuperclass  {
 	
 	public static void main (String[] args) throws InvalidHoursException {
 		
@@ -11,11 +11,15 @@ public class main  {
 		light1.energyCost(50); // this invokes the subclass because it is an aliases 
 		light2.energyCost(50); // this invokes the more general class because it is it is on the light class
 		
+		main object = new main(); 
+		object.print();
+	
 		
 		
-		
-		
-		
+	}
+	
+	public void print() {
+		System.out.println(msg.text);
 	}
 
 }
