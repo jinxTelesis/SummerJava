@@ -14,6 +14,8 @@ public class main extends MySuperclass  {
 		main object = new main(); 
 		object.print();
 	
+		Car c = new Car();
+		Vehicle v = c;
 		
 		
 	}
