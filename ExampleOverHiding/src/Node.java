@@ -15,6 +15,4 @@ public class Node {
 	public void setNext(Node node) {next= node;}
 	public Node getNext() {return next;}
 	
-	
-
 }
