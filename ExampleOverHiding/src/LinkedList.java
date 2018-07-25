@@ -26,7 +26,5 @@ public class LinkedList {
 		else head = head.getNext();
 		return removed.getData();
 	}
-	
-	
 
 }
