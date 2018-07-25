@@ -18,6 +18,15 @@ public class main extends MySuperclass  {
 		Vehicle v = c;
 		
 		
+		// Inheritance versus aggregation example
+		String string1 = "Queues are boring to stand in!";
+		int length1 = string1.length();
+		QueueByAggregation queue = new QueueByAggregation();
+		for (int i = 0; i<length1; i++)
+			queue.enqueue(new Character(string1.charAt(i)));
+		
+		/// not done
+		/// not done
 	}
 	
 	public void print() {
