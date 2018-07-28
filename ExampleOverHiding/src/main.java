@@ -23,8 +23,32 @@ public class main extends MySuperclass  {
 		int length1 = string1.length();
 		QueueByAggregation queue = new QueueByAggregation();
 		for (int i = 0; i<length1; i++)
+		{
 			queue.enqueue(new Character(string1.charAt(i)));
+		}
 		
+		while (!queue.isEmpty())
+		{
+			System.out.println(queue.dequeue());
+		}
+		System.out.println();
+		
+		String string2 = "!no tis ot nuf era skcatS";
+		int length2 = string2.length();
+		
+		StackByInheritance stack = new StackByInheritance();
+		
+		for (int i = 0; i<length2; i++)
+		{
+			stack.push(new Character(string2.charAt(i)));
+		}
+		
+		stack.insertAtBack(new Character('!'));
+		while(!stack.isEmpty())
+		{
+			System.out.println(stack.pop());
+		}
+		System.out.println();
 		/// not done
 		/// not done
 	}
