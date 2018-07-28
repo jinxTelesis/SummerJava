@@ -49,6 +49,9 @@ public class main extends MySuperclass  {
 			System.out.println(stack.pop());
 		}
 		System.out.println();
+		
+		System.out.println("I love reuters new group");
+		System.out.println("Best stuff ever!");
 		/// not done
 		/// not done
 	}
