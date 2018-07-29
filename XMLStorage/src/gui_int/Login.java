@@ -28,8 +28,7 @@ public class Login {
 	private String validUser = "Billy";
 	private String validPass = "Bob";
 	
-
-
+	
 	public static void main(String[] args) {
 		
 	    try {

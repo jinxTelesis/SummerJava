@@ -11,6 +11,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class DummyDatabaseFrame extends JFrame {
 
@@ -98,15 +101,15 @@ public class DummyDatabaseFrame extends JFrame {
 		contentPane.add(lblWeight);
 		
 		JLabel lblAge = new JLabel("Age");
-		lblAge.setBounds(37, 257, 100, 14);
+		lblAge.setBounds(37, 262, 100, 14);
 		contentPane.add(lblAge);
 		
 		JRadioButton rdbtnMale = new JRadioButton("Male");
-		rdbtnMale.setBounds(37, 278, 100, 23);
+		rdbtnMale.setBounds(37, 283, 100, 23);
 		contentPane.add(rdbtnMale);
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("Female");
-		rdbtnNewRadioButton.setBounds(37, 303, 100, 23);
+		rdbtnNewRadioButton.setBounds(37, 308, 100, 23);
 		contentPane.add(rdbtnNewRadioButton);
 		
 		JLabel lblFavoriteWeapon = new JLabel("Favorite Weapon");
@@ -128,12 +131,12 @@ public class DummyDatabaseFrame extends JFrame {
 		
 		textField_1 = new JTextField();
 		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		textField_1.setBounds(181, 57, 50, 20);
+		textField_1.setBounds(165, 57, 50, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(181, 107, 50, 20);
+		textField_2.setBounds(165, 107, 50, 20);
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
@@ -142,32 +145,32 @@ public class DummyDatabaseFrame extends JFrame {
 		contentPane.add(label);
 		
 		textField_3 = new JTextField();
-		textField_3.setBounds(181, 82, 50, 20);
+		textField_3.setBounds(165, 82, 50, 20);
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
 		
 		textField_4 = new JTextField();
-		textField_4.setBounds(180, 132, 50, 20);
+		textField_4.setBounds(165, 132, 50, 20);
 		contentPane.add(textField_4);
 		textField_4.setColumns(10);
 		
 		textField_5 = new JTextField();
-		textField_5.setBounds(181, 157, 50, 20);
+		textField_5.setBounds(165, 157, 50, 20);
 		contentPane.add(textField_5);
 		textField_5.setColumns(10);
 		
 		textField_6 = new JTextField();
-		textField_6.setBounds(181, 182, 50, 20);
+		textField_6.setBounds(165, 182, 50, 20);
 		contentPane.add(textField_6);
 		textField_6.setColumns(10);
 		
 		textField_7 = new JTextField();
-		textField_7.setBounds(181, 232, 50, 20);
+		textField_7.setBounds(165, 232, 50, 20);
 		contentPane.add(textField_7);
 		textField_7.setColumns(10);
 		
 		textField_8 = new JTextField();
-		textField_8.setBounds(181, 257, 50, 20);
+		textField_8.setBounds(181, 262, 50, 20);
 		contentPane.add(textField_8);
 		textField_8.setColumns(10);
 		
@@ -293,5 +296,17 @@ public class DummyDatabaseFrame extends JFrame {
 		textField_23.setBounds(348, 182, 33, 20);
 		contentPane.add(textField_23);
 		textField_23.setColumns(10);
+		
+		JButton btnAddCharacter = new JButton("Add Character");
+		btnAddCharacter.setBounds(273, 232, 108, 23);
+		contentPane.add(btnAddCharacter);
+		
+		JButton btnNewButton = new JButton("Remove Character");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setBounds(273, 262, 108, 23);
+		contentPane.add(btnNewButton);
 	}
 }
