@@ -125,7 +125,7 @@ public class DummyDatabaseFrame extends JFrame {
 		contentPane.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(181, 32, 200, 20);
+		textField.setBounds(165, 32, 216, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
@@ -170,27 +170,27 @@ public class DummyDatabaseFrame extends JFrame {
 		textField_7.setColumns(10);
 		
 		textField_8 = new JTextField();
-		textField_8.setBounds(181, 262, 50, 20);
+		textField_8.setBounds(165, 262, 50, 20);
 		contentPane.add(textField_8);
 		textField_8.setColumns(10);
 		
 		textField_9 = new JTextField();
-		textField_9.setBounds(181, 350, 50, 20);
+		textField_9.setBounds(165, 350, 50, 20);
 		contentPane.add(textField_9);
 		textField_9.setColumns(10);
 		
 		textField_10 = new JTextField();
-		textField_10.setBounds(181, 379, 50, 20);
+		textField_10.setBounds(165, 379, 50, 20);
 		contentPane.add(textField_10);
 		textField_10.setColumns(10);
 		
 		textField_11 = new JTextField();
-		textField_11.setBounds(181, 407, 50, 20);
+		textField_11.setBounds(165, 407, 50, 20);
 		contentPane.add(textField_11);
 		textField_11.setColumns(10);
 		
 		JLabel lblMod = new JLabel("Mod");
-		lblMod.setBounds(241, 57, 20, 20);
+		lblMod.setBounds(237, 57, 24, 20);
 		contentPane.add(lblMod);
 		
 		JLabel lblMod_1 = new JLabel("Mod");
