@@ -45,6 +45,9 @@ public class DummyDatabaseFrame extends JFrame {
 	private JTextField textField_24;
 	private JTextField textField_25;
 	private JTextField textField_26;
+	private JTextField textField_27;
+	private JTextField textField_28;
+	private JTextField textField_29;
 
 	/**
 	 * Launch the application.
@@ -338,5 +341,32 @@ public class DummyDatabaseFrame extends JFrame {
 		JLabel lblNewLabel_4 = new JLabel("Atk");
 		lblNewLabel_4.setBounds(240, 410, 46, 14);
 		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Damage");
+		lblNewLabel_5.setBounds(320, 353, 46, 14);
+		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Damage");
+		lblNewLabel_6.setBounds(320, 382, 46, 14);
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Damage");
+		lblNewLabel_7.setBounds(320, 407, 46, 14);
+		contentPane.add(lblNewLabel_7);
+		
+		textField_27 = new JTextField();
+		textField_27.setBounds(369, 350, 86, 20);
+		contentPane.add(textField_27);
+		textField_27.setColumns(10);
+		
+		textField_28 = new JTextField();
+		textField_28.setBounds(369, 379, 86, 20);
+		contentPane.add(textField_28);
+		textField_28.setColumns(10);
+		
+		textField_29 = new JTextField();
+		textField_29.setBounds(369, 407, 86, 20);
+		contentPane.add(textField_29);
+		textField_29.setColumns(10);
 	}
 }
