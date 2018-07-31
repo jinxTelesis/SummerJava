@@ -42,6 +42,9 @@ public class DummyDatabaseFrame extends JFrame {
 	private JTextField textField_21;
 	private JTextField textField_22;
 	private JTextField textField_23;
+	private JTextField textField_24;
+	private JTextField textField_25;
+	private JTextField textField_26;
 
 	/**
 	 * Launch the application.
@@ -308,5 +311,20 @@ public class DummyDatabaseFrame extends JFrame {
 		});
 		btnNewButton.setBounds(273, 262, 108, 23);
 		contentPane.add(btnNewButton);
+		
+		textField_24 = new JTextField();
+		textField_24.setBounds(273, 350, 86, 20);
+		contentPane.add(textField_24);
+		textField_24.setColumns(10);
+		
+		textField_25 = new JTextField();
+		textField_25.setBounds(273, 379, 86, 20);
+		contentPane.add(textField_25);
+		textField_25.setColumns(10);
+		
+		textField_26 = new JTextField();
+		textField_26.setBounds(273, 407, 86, 20);
+		contentPane.add(textField_26);
+		textField_26.setColumns(10);
 	}
 }
