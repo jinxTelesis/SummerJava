@@ -313,18 +313,30 @@ public class DummyDatabaseFrame extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		textField_24 = new JTextField();
-		textField_24.setBounds(273, 350, 86, 20);
+		textField_24.setBounds(273, 350, 30, 20);
 		contentPane.add(textField_24);
 		textField_24.setColumns(10);
 		
 		textField_25 = new JTextField();
-		textField_25.setBounds(273, 379, 86, 20);
+		textField_25.setBounds(273, 379, 30, 20);
 		contentPane.add(textField_25);
 		textField_25.setColumns(10);
 		
 		textField_26 = new JTextField();
-		textField_26.setBounds(273, 407, 86, 20);
+		textField_26.setBounds(273, 404, 30, 20);
 		contentPane.add(textField_26);
 		textField_26.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Atk");
+		lblNewLabel_2.setBounds(240, 353, 46, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Atk");
+		lblNewLabel_3.setBounds(240, 382, 46, 14);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Atk");
+		lblNewLabel_4.setBounds(240, 410, 46, 14);
+		contentPane.add(lblNewLabel_4);
 	}
 }
