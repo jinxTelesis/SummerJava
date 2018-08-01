@@ -368,5 +368,9 @@ public class DummyDatabaseFrame extends JFrame {
 		textField_29.setBounds(369, 407, 86, 20);
 		contentPane.add(textField_29);
 		textField_29.setColumns(10);
+		
+		JButton btnNextCharacter = new JButton("Next Character");
+		btnNextCharacter.setBounds(165, 308, 121, 23);
+		contentPane.add(btnNextCharacter);
 	}
 }
