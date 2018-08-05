@@ -13,6 +13,8 @@ public class Main {
 		list22.add("youtube");
 		list22.add("google");
 		list22.add("digg");
+		list22.add("wtf happend to my additions");
+		
 		
 		for(String x : Listone)
 			System.out.printf("%s ", x);
