@@ -9,6 +9,17 @@ public class Main {
 		String[] stuff = {"great", "notsoGreat", "cheese", "grain","walk"};
 		List<String> Listone = Arrays.asList(stuff);
 		
+		String[] stuffme = {"love","me","streak","bob","chicken","firearms"};
+		List<String> ListTwo = Arrays.asList(stuffme);
+		
+		
+		ArrayList<String> list50 = new ArrayList<String>();
+		list50.add("Dog");
+		list50.add("Doggy");
+		list50.add("SpaceMan");
+		list50.remove(0);
+		list50.remove("Dog");
+		
 		ArrayList<String> list22 = new ArrayList<String>();
 		list22.add("youtube");
 		list22.add("google");
