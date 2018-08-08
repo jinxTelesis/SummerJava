@@ -9,8 +9,21 @@ public class Main {
 		String[] stuff = {"great", "notsoGreat", "cheese", "grain","walk"};
 		List<String> Listone = Arrays.asList(stuff);
 		
+		String[] rockenrole = {"great", "really good", "lazy","fmdsf","blue"};
+		List<String> ListTwo2 = Arrays.asList(rockenrole);
+		
+		
+		
 		String[] stuffme = {"love","me","streak","bob","chicken","firearms"};
 		List<String> ListTwo = Arrays.asList(stuffme);
+		
+		ArrayList<String> listIt = new ArrayList<String>();
+		listIt.add("moo");
+		listIt.add("twohundred");
+		listIt.remove(0);
+		listIt.remove(0);
+		
+		
 		
 		
 		ArrayList<String> list50 = new ArrayList<String>();
@@ -30,6 +43,11 @@ public class Main {
 		for(String x : Listone)
 			System.out.printf("%s ", x);
 		
+		for(String y : ListTwo)
+			System.out.printf("%s ", y);
+		
+		Collections.addAll(list50, stuffme);
+		
 		Collections.addAll(list22, stuff);
 		
 		System.out.println();
@@ -39,6 +57,8 @@ public class Main {
 		System.out.println(Collections.frequency(list22, "digg"));
 		
 		boolean tof = Collections.disjoint(Listone, list22);
+		boolean tof2 = Collections.disjoint(ListTwo, list50);
+		
 		System.out.println(tof); // false has elements in common
 		
 		if(tof)

@@ -18,6 +18,9 @@ public class Generate extends JPanel {
 		g.setColor(Color.RED);
 		g.drawString("this is some text", 25, 120);
 		
+		g.setColor(Color.BLACK);
+		g.drawString("more text", 100, 180);
+		
 	}
 
 }
