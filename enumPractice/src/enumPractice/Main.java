@@ -4,6 +4,7 @@ package enumPractice;
 enum Season {SPRING, SUMMER, FALL, WINTER}
 enum Day {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY}
 enum Month {JAN, FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC}
+enum taste {GREEN,BLACK,RED,ORANGE}
 
 public class Main {
 
@@ -24,6 +25,15 @@ public class Main {
 		
 		System.out.printf("The amount of interest is $%1.2f%n", interest);
 		System.out.printf("The value after one year is $%1.2f%n", principal);
+		
+		String temp = "";
+		Season early = Season.SPRING;
+		early = Season.FALL;
+		early = Season.SPRING;
+		early = Season.WINTER;
+		early = Season.SUMMER;
+		
+		Day day = Day.SATURDAY;
 		
 		
 
